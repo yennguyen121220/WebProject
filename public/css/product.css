@@ -1,0 +1,528 @@
+@charset "utf-8";
+/* CSS Document */
+<!--Menu top-->
+body{
+	font-family:Tahoma;
+	font-size:13px;
+	width:1250px;
+}
+
+#content #menu_top{
+	height:200px;
+	width:1250px;
+}
+#content #main{
+	min-height:500px;
+	width:1250px;
+	clear:left;
+}
+#content #main #menu_left{
+	float:left;
+	width:250px;
+	height:400px;
+}
+
+#content #main #hotdeals{
+	float:left;
+	width:1000px;
+	min-height:400px;
+}
+
+#content #menu_top #danhmuc{
+	height:40px;
+	width:1250px;
+}
+#content #menu_top #duongdan{
+	height:40px;
+	width:1250px;
+}
+#content #menu_top #logo{
+	width:300px;
+	float:left;
+	min-height:120px;
+}
+#content #menu_top #logo img{
+	height:120px;
+	width:250px;
+	margin-left:40px;
+}
+#content #menu_top #top_left{
+	width:775px;
+	float:left;
+	height:120px;
+}
+#content #menu_top #top_left #find{
+	height:90px;
+	text-align:center;
+	line-height:100px;
+}
+#content #menu_top #top_left #qoute {
+	height:30px;
+	margin-top:-17px;
+	
+}
+#content #menu_top #top_left #qoute h2{
+	font-size:25px;
+	color:#F96;
+	font-family:"Comic Sans MS", cursive;
+	line-height:30px;
+	text-align:center;
+	margin-top:8px;
+}
+#content #menu_top #top_left #find input[type=text]{
+	width: 450px;
+	height:40px;
+	border-radius: 15px 15px 15px 15px;
+	border: 1px solid #ccc;
+	background:#FFF url(http://localhost/DoAn/public/images/iconsearch.png) no-repeat 1px;
+	text-indent:35px;
+}
+#content #menu_top #top_left #find input[type=button]{
+	width:100px;
+	height:40px;
+	background:#7fab21;
+	color:#FFF;
+	border: 0px;
+}
+#content #menu_top #top_right{
+	width:175px;
+	float:left;
+	height:120px;
+}
+#content #menu_top #danhmuc{
+	background:#7fab21;
+	clear:left;
+	height:40px;
+}
+#content #menu_top #danhmuc .nav-main ul{
+	margin:-40px 0px 0px 200px;
+	padding:0px;
+}
+#content #menu_top #danhmuc .nav-main ul li{
+	list-style:none;
+	width:120px;
+	float:left;
+	text-align:center;
+}
+#content #menu_top #danhmuc .nav-main ul li a{
+	text-decoration:none;display:block;
+	height:40px;
+	font-size:18px;
+	line-height:40px;
+	color:#FFF;
+	padding:0px 20px 0px 20px;/*giãn cách theo 4 chiều top left bottom right*/
+	border-right:1px solid #FC9;
+}
+#content #menu_top #top_right #right_top{
+	min-height:90px;
+	width:175px;
+}
+#content #menu_top #top_right #right_top #left{
+	float:left;
+	width:175px;
+	height:70px;
+	background:#FFF url(http://localhost/DoAn/public/images/iconcart.png) no-repeat 1px;
+	line-height:40px;
+	text-align:center;
+	color:#7fab21;	
+}
+#content #menu_top #top_right #right_top #left a{
+	text-decoration:none;
+	color:#7fab21;
+}
+#content #menu_top #top_right #right_top #left h3{
+	margin-top:25px;
+	font-size:17px;
+}
+/*--------Menu ngang--------*/
+#content #menu_top #top_right #right_top #right{
+	height:20px;
+	background:#FFF;
+}
+#content #menu_top #top_right #right_top #right ul{
+	margin:0px;
+	padding:0px;
+}
+#content #menu_top #top_right #right_top #right ul li{
+	list-style:none;
+	float:left;
+}
+#content #menu_top #top_right #right_top #right ul li a{
+	text-decoration:none;
+	display:block;
+	height:20px;
+	color:#7fab21;
+	border-left:1px solid #7fab21;
+	padding:0px 10px 0px 10px;/*giãn cách theo 4 chiều top left bottom right*/
+} 
+#content #menu_top #top_right #right_bottom{
+	margin:-20px 20px;
+	height:30px;
+}
+#content #menu_top #top_right #right_bottom a{
+	text-decoration:none;
+	color:#7fab21;
+}
+
+/*--------------*/
+#content #menu_top #duongdan .dd ul{
+	margin:0px;
+	padding:0px;
+}
+#content #menu_top #duongdan .dd ul li{
+	list-style:none;
+	float:left;
+}
+#content #menu_top #duongdan .dd ul li a{
+	text-decoration:none;
+	display:block;
+	height:20px;
+	color:#7fab21;
+	border-left:1px solid #7fab21;
+	padding:0px 10px 0px 10px;/*giãn cách theo 4 chiều top left bottom right*/
+} 
+/*-----------------*/
+
+
+
+/*----Menu doc---*/
+*/
+#content #main #menu_left .main_menu ul{
+	margin:-25px 0px 0px -10px;
+	padding:0px;
+}
+
+#content #main #menu_left .main_menu ul li{
+	list-style:none;
+}
+#content #main #menu_left .main_menu h3{
+	background:#FFF url(http://localhost/DoAn/public/images/iconlist.png) no-repeat 1px;
+	height:45px;
+	text-indent:50px;
+	line-height:45px;
+	margin-top:0px;
+	font-size:20px;
+	color:#7fab21;
+}
+#content #main #menu_left .main_menu ul li a{
+	display:block;
+	text-decoration:none;/*bo gach chan duoi menu*/
+	line-height:45px;
+	height:40px;
+	margin:0px 0px 0px -30px;
+	border-bottom: 1px solid #7fab21;
+	background: url(http://localhost/DoAn/public/images/icontick.png) no-repeat 2px ;
+	text-indent:35px;
+	color: #000;
+	font-size:14px;
+}
+#content #main #menu_left .main_menu ul li a:hover{
+	background:#7fab21 url(http://localhost/DoAn/public/images/icontick.png) no-repeat 2px ;
+	/* color:#FFF; */
+}
+
+/*------------banner---------*/
+#main #container{
+	float:left;
+	width:1000px;
+	background:#CF0;
+}
+#main #container{
+	background:#FFF;
+	min-height:500px;
+}
+#main #container img{
+	height:450px;
+	width:950px;
+}
+
+
+#container {
+	position:relative;
+	height:300px;
+	width:900px;
+  }
+  #container img {
+	position:absolute;
+	margin:20px;
+  }
+  @-webkit-keyframes imgFade {
+   0% {
+	 opacity:1;
+   }
+   17% {
+	 opacity:1;
+   }
+   25% {
+	 opacity:0;
+   }
+   92% {
+	 opacity:0;
+   }
+   100% {
+	 opacity:1;
+   }
+  }
+  
+  @-moz-keyframes imgFade {
+   0% {
+	 opacity:1;
+   }
+   17% {
+	 opacity:1;
+   }
+   25% {
+	 opacity:0;
+   }
+   92% {
+	 opacity:0;
+   }
+   100% {
+	 opacity:1;
+   }
+  }
+  
+  @-o-keyframes imgFade {
+   0% {
+	 opacity:1;
+   }
+   17% {
+	 opacity:1;
+   }
+   25% {
+	 opacity:0;
+   }
+   92% {
+	 opacity:0;
+   }
+   100% {
+	 opacity:1;
+   }
+  }
+  
+  @keyframes imgFade {
+   0% {
+	 opacity:1;
+   }
+   17% {
+	 opacity:1;
+   }
+   25% {
+	 opacity:0;
+   }
+   92% {
+	 opacity:0;
+   }
+   100% {
+	 opacity:1;
+   }
+  }
+  #container img {
+	-webkit-animation-name: imgFade;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 8s;
+  
+	-moz-animation-name: imgFade;
+	-moz-animation-timing-function: ease-in-out;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-duration: 8s;
+  
+	-o-animation-name: imgFade;
+	-o-animation-timing-function: ease-in-out;
+	-o-animation-iteration-count: infinite;
+	-o-animation-duration: 8s;
+  
+	animation-name: imgFade;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 8s;
+  }
+  #container img:nth-of-type(1) {
+	-webkit-animation-delay: 6s;
+	-moz-animation-delay: 6s;
+	-o-animation-delay: 6s;
+	animation-delay: 6s;
+  }
+  #container img:nth-of-type(2) {
+	-webkit-animation-delay: 4s;
+	-moz-animation-delay: 4s;
+	-o-animation-delay: 4s;
+	animation-delay: 4s;
+  }
+  #container img:nth-of-type(3) {
+	-webkit-animation-delay: 2s;
+	-moz-animation-delay: 2s;
+	-o-animation-delay: 2s;
+	animation-delay: 2s;
+  }
+  #container img:nth-of-type(4) {
+	-webkit-animation-delay: 0;
+	-moz-animation-delay: 0;
+	-o-animation-delay: 0;
+	animation-delay: 0;
+  }
+  
+  
+
+/*--------Main-------------*/
+
+#content #main #hotdeals .name {
+	height:60px;
+	line-height:60px;
+	clear:left;
+}
+#content #main #hotdeals .name h3{
+	font-family:"Comic Sans MS", cursive;
+	font-size:30px;
+	color:#7fab21;
+	text-align:center;	
+}
+
+/*------sanpham---------*/
+
+#content #main #hotdeals .sanpham ul{
+	margin-left:50px;
+	padding:0px;
+}
+#content #main #hotdeals .sanpham ul li{
+	list-style:none;
+	float:left;
+	padding-right: 15px;
+	width:300px;
+	height:400px;
+}
+#content #main #hotdeals .sanpham ul li img{
+	width:250px;
+	height:250px;
+}
+#content #main #hotdeals .sanpham h3{
+	line-height:30px;
+	/* clear:left; */
+	text-align:center;
+	color:#7fab21;
+	font-size:30px;
+	/* font-family:"Comic Sans MS", cursive; */
+}
+#content #main #hotdeals .sanpham h3 a{
+	border-bottom:#7fab21;
+	color:#7fab21;
+}
+#content #main #hotdeals .sanpham h3 a:hover{
+	cursor: pointer;
+	background-color: red;
+}
+#content #main #hotdeals .sanpham ul li div{
+	width:250px;
+	border-radius: 15px 15px 15px 15px;
+	border: 1px solid #7fab21;
+	text-align:center;
+	background:#FFFFCC;
+	margin:10px 20px 10px 0px;
+	border-spacing: 10px 20px;
+}
+#content #main #hotdeals .sanpham ul li div input[type=button]{
+	border-radius: 15px 15px 15px 15px;
+	height:30px;
+	width:120px;
+	color:#FFF;
+	background:#7fab21;
+	border: 0px solid #7fab21;
+}
+#content #main #hotdeals .sanpham ul li div input[type=button]:hover{
+	background:#FC6;
+	color:#000;
+}
+
+		/*footer*/
+footer {
+	clear:left;
+	background-color: #f2f2f2;
+}
+
+.footer-wrap {
+	padding: 15px 10px;
+	text-align: center;
+}
+
+.footer-wrap-info {
+	display: flex;
+	justify-content: space-around;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e2e2e2;
+	margin-bottom: 30px;
+}
+
+.footer__shopInfo-aboutus-heading {
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+
+.footer__shopInfo-link-list {
+	padding-left: 0;
+	list-style: none;
+}
+
+.footer__shopInfo-link-item {
+	margin: 15px 0;
+}
+
+.footer__shopInfo-link {
+	text-decoration: none;
+	font-size: 14px;
+	color: #000;
+}
+
+.footer__shopInfo-link:hover {
+	text-decoration: underline;
+}
+
+.footer__contact-container,
+.footer__address-container {
+	font-size: 15px;
+}
+
+.footer__contact-icon-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer__contact-icon-link {
+	font-size: 28px;
+	color: #666;
+}
+
+.footer__contact-icon-link:hover {
+	color: #222;
+}
+
+.footer-wrap-copyright {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer-wrap-copyright p {
+	padding-right: 20px;
+	border-right: 1px solid #888;
+	margin: 0;
+}
+
+.footer-wrap-copyright-link-container {
+	padding-left: 20px;
+}
+
+.footer-wrap-copyright-link {
+	font-size: 13px;
+	text-decoration: none;
+	margin: 0 10px;
+	color: #333;
+}
+
+.footer-wrap-copyright-link:first-child {
+	margin-left: 0;
+}
+
+.footer-wrap-copyright-link:hover {
+	text-decoration: underline;
+}
