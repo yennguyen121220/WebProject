@@ -7,7 +7,7 @@ class QuanModel extends DB{
         return mysqli_query($this->con,$qr);
     }
     public function QuanGT(){
-        $qr="SELECT * FROM sanpham WHERE loai='4' AND masp BETWEEN 80 and 85";
+        $qr="SELECT * FROM sanpham WHERE loai='4' AND masp BETWEEN 80 and 81";
         return mysqli_query($this->con,$qr);
     }
 }

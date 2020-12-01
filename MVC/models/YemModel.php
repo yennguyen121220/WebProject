@@ -7,7 +7,7 @@ class YemModel extends DB{
         return mysqli_query($this->con,$qr);
     }
     public function YemGT(){
-        $qr="SELECT * FROM sanpham WHERE loai='5' AND masp BETWEEN 110 and 115";
+        $qr="SELECT * FROM sanpham WHERE loai='5' AND masp BETWEEN 110 and 111";
         return mysqli_query($this->con,$qr);
     }
 }

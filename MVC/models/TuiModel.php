@@ -7,7 +7,7 @@ class TuiModel extends DB{
         return mysqli_query($this->con,$qr);
     }
     public function TuiGT(){
-        $qr="SELECT * FROM sanpham WHERE loai='1' AND masp BETWEEN 1 and 6";
+        $qr="SELECT * FROM sanpham WHERE loai='1' AND masp BETWEEN 1 and 2";
         return mysqli_query($this->con,$qr);
     }
 }
