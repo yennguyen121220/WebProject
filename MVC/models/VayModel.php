@@ -6,7 +6,7 @@ class VayModel extends DB{
         return mysqli_query($this->con,$qr);
     }
     public function VayGT(){
-        $qr="SELECT * FROM sanpham WHERE loai='7' AND masp BETWEEN 150 and 155";
+        $qr="SELECT * FROM sanpham WHERE loai='7' AND masp BETWEEN 150 and 151";
         return mysqli_query($this->con,$qr);
     }
 }

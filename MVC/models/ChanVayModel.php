@@ -6,7 +6,7 @@ class ChanVayModel extends DB{
         return mysqli_query($this->con,$qr);
     }
     public function ChanVayGT(){
-        $qr="SELECT * FROM sanpham WHERE loai='6' AND masp BETWEEN 125 and 130";
+        $qr="SELECT * FROM sanpham WHERE loai='6' AND masp BETWEEN 125 and 126";
         return mysqli_query($this->con,$qr);
     }
 }

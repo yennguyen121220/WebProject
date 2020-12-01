@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo $data["Page"] ?> - Jolie Clothing</title>
 <link href="http://localhost/DoAn/public/css/product.css" type="text/css" rel="stylesheet" />
+<link href="http://localhost/DoAn/public/css/fontawesome-free-5.14.0/css/all.min.css" type="text/css" rel="stylesheet" />
 
 </head>
 
@@ -28,8 +29,8 @@
                 <div id="right_top">
                     <div id="right">
                         <ul>
-                            <li><a href="#" title="Đăng ký">Đăng ký</a></li>
-                            <li><a href="#" title="Đăng nhập">Đăng nhập</a></li>
+                            <li><a href="./DangKy" title="Đăng ký">Đăng ký</a></li>
+                            <li><a href="./DangNhap" title="Đăng nhập">Đăng nhập</a></li>
                         </ul>
                     </div>
                     

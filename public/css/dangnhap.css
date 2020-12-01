@@ -1,0 +1,433 @@
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+	font-family: Tahoma;
+}
+
+* {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+}
+
+
+/* Header */
+
+header #menu_top{
+	height:160px;
+	width:1250px;
+}
+header #main{
+	min-height:500px;
+	width:1250px;
+	clear:left;
+}
+header #main #menu_left{
+	float:left;
+	width:250px;
+	height:400px;
+}
+
+header #main #hotdeals{
+	float:left;
+	width:1000px;
+	min-height:400px;
+}
+
+header #menu_top #danhmuc{
+	height:40px;
+	width:1250px;
+}
+header #menu_top #duongdan{
+	height:40px;
+	width:1250px;
+}
+header #menu_top #logo{
+	width:300px;
+	float:left;
+	min-height:120px;
+}
+header #menu_top #logo img{
+	height:120px;
+	width:250px;
+	margin-left:40px;
+}
+header #menu_top #top_left{
+	width:775px;
+	float:left;
+	height:120px;
+}
+header #menu_top #top_left #find{
+	height:90px;
+	text-align:center;
+	line-height:100px;
+}
+header #menu_top #top_left #qoute {
+	height:30px;
+	margin-top:-17px;
+	
+}
+header #menu_top #top_left #qoute h2{
+	font-size:25px;
+	color:#F96;
+	font-family:"Comic Sans MS", cursive;
+	line-height:30px;
+	text-align:center;
+	margin-top:8px;
+}
+header #menu_top #top_left #find input[type=text]{
+	width: 450px;
+	height:40px;
+	border-radius: 15px 15px 15px 15px;
+	border: 1px solid #ccc;
+	background:#FFF url(http://localhost/DoAn/public/images/iconsearch.png) no-repeat 1px;
+	text-indent:35px;
+}
+header #menu_top #top_left #find input[type=button]{
+	width:100px;
+	height:40px;
+	background:#7fab21;
+	color:#FFF;
+	border: 0px;
+}
+header #menu_top #top_right{
+	width:175px;
+	float:left;
+	height:120px;
+} 
+
+header #menu_top #top_right #right_top #left{
+	float:left;
+	width:175px;
+	height:70px;
+	background:#FFF url(http://localhost/DoAn/public/images/iconcart.png) no-repeat 1px;
+	line-height:40px;
+	text-align:center;
+	color:#7fab21;	
+}
+header #menu_top #top_right #right_top #left a{
+	text-decoration:none;
+	color:#7fab21;
+}
+header #menu_top #top_right #right_top #left h3{
+	margin-top:25px;
+	font-size:17px;
+}
+
+header #menu_top #top_right #right_top #right{
+    height:20px;
+	background:#FFF;
+}
+header #menu_top #top_right #right_top #right ul{
+	margin:0px;
+	padding:0px;
+}
+header #menu_top #top_right #right_top #right ul li{
+	list-style:none;
+	float:left;
+}
+header #menu_top #top_right #right_top #right ul li a{
+	text-decoration:none;
+    display:block;
+    font-size: 15px;
+	height:20px;
+	color:#7fab21;
+	border-left:1px solid #7fab21;
+	padding:0px 10px 0px 10px;/*giãn cách theo 4 chiều top left bottom right*/
+} 
+header #menu_top #top_right #right_bottom{
+	margin:-20px 20px;
+	height:30px;
+}
+header #menu_top #top_right #right_bottom a{
+    text-decoration:none;
+    font-size: 20px;
+	color:#7fab21;
+}
+
+/*--------------*/
+
+
+
+/* Main form */
+.main__heading-form {
+    margin-top: 0;
+    font-size: 2.8rem;
+    color: #555;
+}
+
+.main__form-container {
+    width: 490px;
+    border: 1px solid #bfe078;
+    background-color: rgba(170, 255, 170, 0.6);
+    box-shadow: 1px 1px 5px #5f752d;
+}
+
+form {
+    padding: 20px 0;
+    width: 70%;
+}
+
+.form-heading {
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #156615;
+}
+
+.input__group {
+    margin-bottom: 15px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #7fab21;
+    border-right: none;
+    border-left: 3px solid #7fab21;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.icon-contianer {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.input__icon-show-hide-password-container {
+    margin-right: 8px;
+    font-size: 1.5rem;
+}
+
+.icon-show,
+.icon-hide {
+    cursor: pointer;
+}
+
+.icon-show {
+    display: none;
+}
+
+.input-icon-container {
+    font-size: 1.5rem;
+    background-color: #3bf73b;
+    color: #fff;
+    height: 100%;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input__group input {
+    height: 100%;
+    padding-left: 10px;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+}
+
+
+.form__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.remeber {
+    display: flex;
+    align-items: center;
+}
+
+.remeber span {
+    font-size: 1.4rem;
+    color: #333;
+}
+
+input[name="check"] {
+    position: relative;
+    margin-bottom: 2px;
+}
+
+input[name="check"]::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    width: 92px;
+    height: 12px;
+}
+
+.forgot-password-link {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: #286d28;
+}
+
+.forgot-password-link:hover {
+    color: #113b11;
+}
+
+.input__login-btn {
+    margin-top: 20px;
+}
+
+input[name="login"] {
+    padding: 10px 0;
+    width: 200px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #eee;
+    background-color: #3bf73b;
+    border: 2px solid #3ab93a;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+input[name="login"]:hover {
+    color: #3bf73b;
+    background-color: #eee;
+    border: 2px solid #3bf73b;
+    transition: all 0.3s ease;
+}
+
+.login__with-btn-other {
+    margin-top: 25px;
+    font-size: 1.4rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.login__with-btn-other span {
+    margin-right: 20px;
+}
+
+.icon-btn {
+    font-size: 2.7rem;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.icon-facebook {
+    color: #3b5998;
+}
+
+.icon-twitter {
+    color: #08a0e9;
+}
+
+.icon-google {
+    color: #d82525;
+}
+
+.form__for-new-user {
+    margin-top: 25px;
+    font-size: 1.4rem;
+}
+
+.form__for-new-user-link {
+    color: #286d28;
+    text-decoration: none;
+}
+
+.form__for-new-user-link:hover {
+    color: #113b11;
+}
+
+
+/* Footer */
+footer {
+    margin-top: 100px;
+	background-color: #f2f2f2;
+}
+
+.footer-wrap {
+	padding: 15px 10px;
+	text-align: center;
+}
+
+.footer-wrap-info {
+	display: flex;
+	justify-content: space-around;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e2e2e2;
+	margin-bottom: 30px;
+}
+
+.footer__shopInfo-aboutus-heading {
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+
+.footer__shopInfo-link-list {
+	padding-left: 0;
+	list-style: none;
+}
+
+.footer__shopInfo-link-item {
+	margin: 15px 0;
+}
+
+.footer__shopInfo-link {
+	text-decoration: none;
+	font-size: 14px;
+	color: #000;
+}
+
+.footer__shopInfo-link:hover {
+	text-decoration: underline;
+}
+
+.footer__contact-container,
+.footer__address-container {
+	font-size: 15px;
+}
+
+.footer__contact-icon-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer__contact-icon-link {
+	font-size: 28px;
+	color: #666;
+}
+
+.footer__contact-icon-link:hover {
+	color: #222;
+}
+
+.footer-wrap-copyright {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer-wrap-copyright p {
+	padding-right: 20px;
+	border-right: 1px solid #888;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.footer-wrap-copyright-link-container {
+	padding-left: 20px;
+}
+
+.footer-wrap-copyright-link {
+	font-size: 13px;
+	text-decoration: none;
+	margin: 0 10px;
+	color: #333;
+}
+
+.footer-wrap-copyright-link:first-child {
+	margin-left: 0;
+}
+
+.footer-wrap-copyright-link:hover {
+	text-decoration: underline;
+}

@@ -7,7 +7,7 @@ class GiayModel extends DB{
         return mysqli_query($this->con,$qr);
     }
     public function GiayGT(){
-        $qr="SELECT * FROM sanpham WHERE loai='2' AND masp BETWEEN 30 and 35";
+        $qr="SELECT * FROM sanpham WHERE loai='2' AND masp BETWEEN 30 and 31";
         return mysqli_query($this->con,$qr);
     }
 }
