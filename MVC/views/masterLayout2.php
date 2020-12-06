@@ -8,14 +8,18 @@
 	<link rel="stylesheet" type="text/css" href="http://localhost/DoAn/public/css/fontawesome-free-5.14.0/css/all.min.css">
     <?php
         echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/".$data["Page"].".css'>";
-    ?>
+	?>
+	<?php
+		if($data["Page"]=="themsp")
+			echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/dangky.css'>";
+	?>
 </head>
 <body>
     <div class="container">
         <header>
             <div id="menu_top"><!--mo menutop-->
                 <div id="logo">
-                    <a href="./Home"><img src="http://localhost/DoAn/public/images/logohome1.png" alt="LogoJolie" /></a>
+                    <a href="http://localhost/DoAn/Home"><img src="http://localhost/DoAn/public/images/logohome1.png" alt="LogoJolie" /></a>
                 </div>
                 <div id="top_left">
                     <div id="find">
@@ -30,8 +34,17 @@
                     <div id="right_top">
                         <div id="right">
                             <ul>
-                                <li><a href="./DangKy" title="Đăng ký">Đăng ký</a></li>
-                                <li><a href="./DangNhap" title="Đăng nhập">Đăng nhập</a></li>
+                                <li><a href="http://localhost/DoAn/DangKy" title="Đăng ký">Đăng ký</a></li>
+                                <!-- <li><a href="http://localhost/DoAn/DangNhap" title="Đăng nhập">Đăng nhập</a></li> -->
+								
+                                <li>
+									<?php if(isset($_SESSION['user_id'])) : ?>
+										<a href="http://localhost/DoAn/DangNhap">Dangxuat</a>
+									<?php else : ?>
+										<a href="http://localhost/DoAn/DangNhap">DangNhap</a>
+									<?php endif; ?>
+								</li>
+								<!-- <li><a>Dang xuat</a></li> -->
                             </ul>
                         </div>
                         <div id="left">
@@ -137,6 +150,22 @@
             icon_hide.style.display="block";            
             password.setAttribute('type','password');
         }
-    </script>
+	</script>
+	
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="./public/js/main.js"></script>
+	<?php if(isset($data["result"])) {?>
+		<script>
+			swal({
+				title:"Good job!",
+				text:"welcome you!",
+				icon: "success",
+				button: "Aww tiss!",
+			});
+		</script>
+	<?php } ?>	
 </body>
 </html>

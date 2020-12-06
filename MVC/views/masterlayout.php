@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,7 +12,7 @@
 	<div id="content">
         <div id="menu_top"><!--mo menutop-->
             <div id="logo">
-                <a href="./Home"><img src="http://localhost/DoAn/public/images/logohome1.PNG" alt="LogoJolie" /></a>
+                <a href="http://localhost/DoAn/Home"><img src="http://localhost/DoAn/public/images/logohome1.PNG" alt="LogoJolie" /></a>
             </div>
             <div id="top_left">
                 <div id="find">
@@ -76,7 +74,12 @@
                         <li><a href="./Quan" title="Quần">Quần</a></li>
                         <li><a href="./Yem" title="Yếm">Yếm</a></li>
                         <li><a href="./ChanVay" title="Chân váy">Chân váy</a></li>
-                        <li><a href="./Vay" title="Váy">Váy</a></li>                
+						<li><a href="./Vay" title="Váy">Váy</a></li>
+						<li><a>Quản lý</a>
+							<ul class="submenu">
+								<li><a href="./ThemSP">Thêm sản phẩm</a></li>
+							</ul>
+						</li>                
                     </ul>
                 </div>
             </div>
@@ -158,6 +161,10 @@
 				</div>
 			</div>
 		</footer>
-    </div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+	<script src="./public/js/main.js"></script>
+	
 </body>
 </html>

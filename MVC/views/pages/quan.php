@@ -10,7 +10,7 @@
 		{
             echo "List.innerHTML+=`";
             echo "<ul><li>";
-            echo "<img src='http://localhost/DoAn/public/images/".$row["hinhanh"].".jpg' alt='Quần nam nữ' /> ";
+            echo "<img src='http://localhost/DoAn/public/images/".$row["hinhanh"]."' alt='Quần nam nữ' /> ";
 			echo "<div id='thongtin'> <span>"	;		
 			echo "<label>".$row["tensp"]."<br><em>thời trang thu đông</em></label>";
             echo "<p>Giá: <span id='gia'>".$row["gia"]."</span></p>";

@@ -2,7 +2,7 @@
     class App{
         //http://localhost/live/Home/SayHi/1/2/3
         protected $controller="Home";
-        protected $action="TrangChu";
+        protected $action="__construct";
         protected $params=[];
 
         function __construct(){
@@ -27,7 +27,7 @@
             }
             //xu ly params
             $this->params=$arr?array_values($arr):[];
-
+            
             call_user_func_array([$this->controller,$this->action],$this->params);
         }
         function UrlProcess(){
