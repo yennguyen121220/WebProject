@@ -5,8 +5,8 @@ class Vay extends Controller{
     //     $sp =$this->model("TuiModel");
     //     echo $sp->GetTui();
     // }
-    function Vay(){
-        $sp=$this->model("VayModel");
+    function __construct(){
+        $sp=$this->model("SanPhamModel");
         $this->view("masterlayout",[
             "Page" =>"vay",
             "Vay" =>$sp->GetVay(),

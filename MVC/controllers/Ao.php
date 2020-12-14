@@ -4,8 +4,8 @@ class Ao extends Controller{
     //     $sp =$this->model("TuiModel");
     //     echo $sp->GetTui();
     // }
-    function Ao(){
-        $sp=$this->model("AoModel");
+    function __construct(){
+        $sp=$this->model("SanPhamModel");
         $this->view("masterlayout",[
             "Page" =>"ao",
             "Ao" =>$sp->GetAo(),

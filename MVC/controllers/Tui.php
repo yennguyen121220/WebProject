@@ -17,8 +17,8 @@ class Tui extends Controller{
     //     $sp =$this->model("TuiModel");
     //     echo $sp->GetTui();
     // }
-    function Tui(){
-        $sp=$this->model("TuiModel");
+    function __construct(){
+        $sp=$this->model("SanPhamModel");
         $this->view("masterlayout",[
             "Page" =>"tui",
             "Tui" =>$sp->GetTui(),

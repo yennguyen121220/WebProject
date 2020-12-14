@@ -6,16 +6,31 @@
     <title><?php echo $data["Page"] ?> - Jolie Clothing</title>
     <!-------- nhúng icon ----------->
 	<link rel="stylesheet" type="text/css" href="http://localhost/DoAn/public/css/fontawesome-free-5.14.0/css/all.min.css">
-    <?php
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	
+	<!-- <?php
         echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/".$data["Page"].".css'>";
-    ?>
+	?> -->
+	<?php
+		if($data["Page"]=="themsp" || $data["Page"]=="suasp" || $data["Page"]=="xoasp")
+			echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/dangky.css'>";
+	?>
+
+	<?php
+		if ($data["Page"]=="suasp" || $data["Page"]=="xoasp")
+		{?>
+			<script src="./public/js/ajaxJS.js"></script>
+		<?php }
+	?>
+	
 </head>
 <body>
     <div class="container">
         <header>
             <div id="menu_top"><!--mo menutop-->
                 <div id="logo">
-                    <a href="./Home"><img src="http://localhost/DoAn/public/images/logohome1.png" alt="LogoJolie" /></a>
+                    <a href="http://localhost/DoAn/Home"><img src="http://localhost/DoAn/public/images/logohome1.png" alt="LogoJolie" /></a>
                 </div>
                 <div id="top_left">
                     <div id="find">
@@ -30,8 +45,17 @@
                     <div id="right_top">
                         <div id="right">
                             <ul>
-                                <li><a href="./DangKy" title="Đăng ký">Đăng ký</a></li>
-                                <li><a href="./DangNhap" title="Đăng nhập">Đăng nhập</a></li>
+                                <li><a href="http://localhost/DoAn/DangKy" title="Đăng ký">Đăng ký</a></li>
+                                <!-- <li><a href="http://localhost/DoAn/DangNhap" title="Đăng nhập">Đăng nhập</a></li> -->
+								
+                                <li>
+									<?php if(isset($_SESSION['user_id'])) : ?>
+										<a href="http://localhost/DoAn/DangNhap">Dangxuat</a>
+									<?php else : ?>
+										<a href="http://localhost/DoAn/DangNhap">DangNhap</a>
+									<?php endif; ?>
+								</li>
+								<!-- <li><a>Dang xuat</a></li> -->
                             </ul>
                         </div>
                         <div id="left">
@@ -123,20 +147,36 @@
     </div>
 
     <script>
-        var icon_hide=document.querySelector(".icon-hide");
-        var icon_show=document.querySelector(".icon-show");
-        var password=document.querySelector('input[name="password"]');
-        icon_hide.onclick=function(e) {
-            e.target.style.display="none";
-            icon_show.style.display="block";
-            password.setAttribute('type','text');
-        }
+        // var icon_hide=document.querySelector(".icon-hide");
+        // var icon_show=document.querySelector(".icon-show");
+        // var password=document.querySelector('input[name="password"]');
+        // icon_hide.onclick=function(e) {
+        //     e.target.style.display="none";
+        //     icon_show.style.display="block";
+        //     password.setAttribute('type','text');
+        // }
 
-        icon_show.onclick=function(e) {
-            e.target.style.display="none";
-            icon_hide.style.display="block";            
-            password.setAttribute('type','password');
-        }
-    </script>
+        // icon_show.onclick=function(e) {
+        //     e.target.style.display="none";
+        //     icon_hide.style.display="block";            
+        //     password.setAttribute('type','password');
+        // }
+	</script>
+	
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="./public/js/main.js"></script>
+	<?php if(isset($data["result"])) {?>
+		<script>
+			swal({
+				title:"Good job!",
+				text:"welcome you!",
+				icon: "success",
+				button: "Aww tiss!",
+			});
+		</script>
+	<?php } ?>
 </body>
 </html>

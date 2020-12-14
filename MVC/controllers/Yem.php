@@ -4,8 +4,8 @@ class Yem extends Controller{
     //     $sp =$this->model("TuiModel");
     //     echo $sp->GetTui();
     // }
-    function Yem(){
-        $sp=$this->model("YemModel");
+    function __construct(){
+        $sp=$this->model("SanPhamModel");
         $this->view("masterlayout",[
             "Page" =>"yem",
             "Yem" =>$sp->GetYem(),
