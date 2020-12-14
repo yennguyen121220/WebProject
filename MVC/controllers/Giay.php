@@ -17,8 +17,8 @@ class Giay extends Controller{
     //     $sp =$this->model("TuiModel");
     //     echo $sp->GetTui();
     // }
-    function Giay(){
-        $sp=$this->model("GiayModel");
+    function __construct(){
+        $sp=$this->model("SanPhamModel");
         $this->view("masterlayout",[
             "Page" =>"giay",
             "Giay" =>$sp->GetGiay(),

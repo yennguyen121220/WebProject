@@ -5,8 +5,8 @@ class ChanVay extends Controller{
     //     $sp =$this->model("TuiModel");
     //     echo $sp->GetTui();
     // }
-    function ChanVay(){
-        $sp=$this->model("ChanVayModel");
+    function __construct(){
+        $sp=$this->model("SanPhamModel");
         $this->view("masterlayout",[
             "Page" =>"chanvay",
             "ChanVay" =>$sp->GetChanVay(),

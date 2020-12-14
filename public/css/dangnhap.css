@@ -80,6 +80,7 @@ header #menu_top #top_left #qoute h2{
 header #menu_top #top_left #find input[type=text]{
 	width: 450px;
 	height:40px;
+	outline: none;
 	border-radius: 15px 15px 15px 15px;
 	border: 1px solid #ccc;
 	background:#FFF url(http://localhost/DoAn/public/images/iconsearch.png) no-repeat 1px;

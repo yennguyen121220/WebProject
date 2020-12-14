@@ -63,6 +63,7 @@ header #menu_top #top_left #find{
 	height:90px;
 	text-align:center;
 	line-height:100px;
+
 }
 header #menu_top #top_left #qoute {
 	height:30px;
@@ -80,6 +81,7 @@ header #menu_top #top_left #qoute h2{
 header #menu_top #top_left #find input[type=text]{
 	width: 450px;
 	height:40px;
+	outline: none;
 	border-radius: 15px 15px 15px 15px;
 	border: 1px solid #ccc;
 	background:#FFF url(http://localhost/DoAn/public/images/iconsearch.png) no-repeat 1px;
@@ -152,6 +154,9 @@ header #menu_top #top_right #right_bottom a{
 
 
 /* Main form */
+.main__form-wrap{
+	line-height: auto;
+}
 .main__form-heading {
 	font-size: 2.8rem;
 	color: #555;
@@ -163,7 +168,7 @@ header #menu_top #top_right #right_bottom a{
 	width: 550px;	
 	background-color: rgba(170, 255, 170, 0.6);
 	border: 1px solid #bfe078;
-	box-shadow: 1px 1px 5px #5f752d;
+	box-shadow: 1px 1px 5px #8a8d82;
 }	
 
 form {
@@ -177,12 +182,12 @@ form {
 	color: #156615;
 }
 
+
 .input__group {
 	margin-bottom: 15px;
 	height: 35px;
 }
-
-.input__group input {
+.input__group select{
 	width: 100%;
 	height: 100%;
 	padding-left: 10px;
@@ -193,6 +198,34 @@ form {
 	outline: none;
 }
 
+.btn-file-upload{
+	width: 187px;
+	position:relative;
+}
+
+.btn-file-upload:after{
+   content:  attr(value);
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;    
+   width: 28%;
+   background:#7fab21;
+   color: white;
+   border-radius: 2px;
+   text-align: center;
+   line-height: 2;
+}
+.input__group input{
+	width: 100%;
+	height: 100%;
+	padding-left: 10px;
+	font-size: 1.5rem;
+	border-radius: 3px;
+	border: 1px solid #7fab21;
+	border-left-width: 3px;
+	outline: none;
+}
 .input__group--margin-bottom-less {
 	margin-bottom: 5px;
 }
@@ -271,9 +304,9 @@ input[name="check"] + span a:hover {
 	margin-bottom: 25px;
 }
 
-input[name="register"] {
+input[name="register"]{
 	width: 200px;
-	background-color: #3bf73b;
+	background-color: #0e770e;
 	color: #eee;
 	font-weight: 600;
 	font-size: 1.5rem;
@@ -285,6 +318,46 @@ input[name="register"] {
 }
 
 input[name="register"]:hover {
+	color: #3bf73b;
+	background-color: #eee;
+	border-color: #3bf73b;
+	transition: all 0.3s ease;
+}
+
+input[name="DeleteSP"]{
+	width: 200px;
+	background-color: #0e770e;
+	color: #eee;
+	font-weight: 600;
+	font-size: 1.5rem;
+	padding: 10px 0;
+	border: 2px solid #3ab93a;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+input[name="DeleteSP"]:hover {
+	color: #3bf73b;
+	background-color: #eee;
+	border-color: #3bf73b;
+	transition: all 0.3s ease;
+}
+
+input[name="UpdateSP"]{
+	width: 200px;
+	background-color: #0e770e;
+	color: #eee;
+	font-weight: 600;
+	font-size: 1.5rem;
+	padding: 10px 0;
+	border: 2px solid #3ab93a;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+input[name="UpdateSP"]:hover {
 	color: #3bf73b;
 	background-color: #eee;
 	border-color: #3bf73b;

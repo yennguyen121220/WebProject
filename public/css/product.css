@@ -72,6 +72,7 @@ body{
 #content #menu_top #top_left #find input[type=text]{
 	width: 450px;
 	height:40px;
+	outline: none;
 	border-radius: 15px 15px 15px 15px;
 	border: 1px solid #ccc;
 	background:#FFF url(http://localhost/DoAn/public/images/iconsearch.png) no-repeat 1px;
@@ -213,13 +214,32 @@ body{
 	border-bottom: 1px solid #7fab21;
 	background: url(http://localhost/DoAn/public/images/icontick.png) no-repeat 2px ;
 	text-indent:35px;
-	color: #000;
+	color: #7fab21;
 	font-size:14px;
 }
 #content #main #menu_left .main_menu ul li a:hover{
 	background:#7fab21 url(http://localhost/DoAn/public/images/icontick.png) no-repeat 2px ;
-	/* color:#FFF; */
+	color:#FFF;
+	cursor: pointer;
 }
+
+
+
+#content #main #menu_left .main_menu ul li ul.submenu{
+	margin:0px 0px 0px 50px;
+	padding:0px;
+	display:none;
+	position:absolute;
+}
+#content #main #menu_left .main_menu li:hover .submenu{
+	display:block;
+}
+#content #main #menu_left .main_menu li:hover .submenu li{
+	width: 200px;
+
+}
+
+
 
 /*------------banner---------*/
 #main #container{
@@ -391,6 +411,9 @@ body{
 	padding-right: 15px;
 	width:300px;
 	height:400px;
+}
+#content #main #hotdeals .sanpham ul:hover{
+	cursor: pointer;
 }
 #content #main #hotdeals .sanpham ul li img{
 	width:250px;

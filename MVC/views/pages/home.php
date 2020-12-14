@@ -16,7 +16,7 @@
 			{
 				echo "List.innerHTML+=`";
 				echo "<ul><li>";
-				echo "<img src='http://localhost/DoAn/public/images/".$row["hinhanh"].".jpg' alt='Túi' /> ";
+				echo "<img src='http://localhost/DoAn/public/images/".$row["hinhanh"]."' alt='Túi' /> ";
 				echo "<div id='thongtin'> <span>"	;		
 				echo "<label>".$row["tensp"]."<br><em>thời trang thu đông</em></label>";
 				echo "<p>Giá: <span id='gia'>".$row["gia"]."</span></p>";
@@ -36,7 +36,7 @@
 			{
 				echo "List.innerHTML+=`";
 				echo "<ul><li>";
-				echo "<img src='http://localhost/DoAn/public/images/".$row["hinhanh"].".jpg' alt='Giày' /> ";
+				echo "<img src='http://localhost/DoAn/public/images/".$row["hinhanh"]."' alt='Giày' /> ";
 				echo "<div id='thongtin'> <span>"	;		
 				echo "<label>".$row["tensp"]."<br><em>thời trang thu đông</em></label>";
 				echo "<p>Giá: <span id='gia'>".$row["gia"]."</span></p>";
@@ -56,7 +56,7 @@
 			{
 				echo "List.innerHTML+=`";
 				echo "<ul><li>";
-				echo "<img src='http://localhost/DoAn/public/images/".$row["hinhanh"].".jpg' alt='Áo' /> ";
+				echo "<img src='http://localhost/DoAn/public/images/".$row["hinhanh"]."' alt='Áo' /> ";
 				echo "<div id='thongtin'> <span>"	;		
 				echo "<label>".$row["tensp"]."<br><em>thời trang thu đông</em></label>";
 				echo "<p>Giá: <span id='gia'>".$row["gia"]."</span></p>";
@@ -76,7 +76,7 @@
 			{
 				echo "List.innerHTML+=`";
 				echo "<ul><li>";
-				echo "<img src='http://localhost/DoAn/public/images/".$row["hinhanh"].".jpg' alt='Chân váy' /> ";
+				echo "<img src='http://localhost/DoAn/public/images/".$row["hinhanh"]."' alt='Chân váy' /> ";
 				echo "<div id='thongtin'> <span>"	;		
 				echo "<label>".$row["tensp"]."<br><em>thời trang thu đông</em></label>";
 				echo "<p>Giá: <span id='gia'>".$row["gia"]."</span></p>";
@@ -96,7 +96,7 @@
 			{
 				echo "List.innerHTML+=`";
 				echo "<ul><li>";
-				echo "<img src='http://localhost/DoAn/public/images/".$row["hinhanh"].".jpg' alt='Quần' /> ";
+				echo "<img src='http://localhost/DoAn/public/images/".$row["hinhanh"]."' alt='Quần' /> ";
 				echo "<div id='thongtin'> <span>"	;		
 				echo "<label>".$row["tensp"]."<br><em>thời trang thu đông</em></label>";
 				echo "<p>Giá: <span id='gia'>".$row["gia"]."</span></p>";
@@ -116,7 +116,7 @@
 			{
 				echo "List.innerHTML+=`";
 				echo "<ul><li>";
-				echo "<img src='http://localhost/DoAn/public/images/".$row["hinhanh"].".jpg' alt='Váy' /> ";
+				echo "<img src='http://localhost/DoAn/public/images/".$row["hinhanh"]."' alt='Váy' /> ";
 				echo "<div id='thongtin'> <span>"	;		
 				echo "<label>".$row["tensp"]."<br><em>thời trang thu đông</em></label>";
 				echo "<p>Giá: <span id='gia'>".$row["gia"]."</span></p>";
@@ -136,7 +136,7 @@
 			{
 				echo "List.innerHTML+=`";
 				echo "<ul><li>";
-				echo "<img src='http://localhost/DoAn/public/images/".$row["hinhanh"].".jpg' alt='Yếm' /> ";
+				echo "<img src='http://localhost/DoAn/public/images/".$row["hinhanh"]."' alt='Yếm' /> ";
 				echo "<div id='thongtin'> <span>"	;		
 				echo "<label>".$row["tensp"]."<br><em>thời trang thu đông</em></label>";
 				echo "<p>Giá: <span id='gia'>".$row["gia"]."</span></p>";

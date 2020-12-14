@@ -2,7 +2,7 @@
     class App{
         //http://localhost/live/Home/SayHi/1/2/3
         protected $controller="Home";
-        protected $action="TrangChu";
+        protected $action="__construct";
         protected $params=[];
 
         function __construct(){
@@ -10,10 +10,14 @@
             $arr=$this->UrlProcess();
             // print_r($arr);
             //xu li controller
-            if(file_exists("./MVC/controllers/".$arr[0].".php")){
-                $this->controller=$arr[0];
-                unset($arr[0]);
+            if (isset($arr[0]))
+            {
+                if(file_exists("./MVC/controllers/".$arr[0].".php")){
+                    $this->controller=$arr[0];
+                    unset($arr[0]);
+                }
             }
+            
             require_once "./MVC/controllers/".$this->controller.".php";
             $this->controller=new $this->controller;
             //xu li action
@@ -23,11 +27,13 @@
                     //no hieu duoc controller vi ow tren minh da goi controller de xu li r
                     $this->action=$arr[1];
                 }
+                
                 unset($arr[1]);
             }
+            
             //xu ly params
             $this->params=$arr?array_values($arr):[];
-
+            
             call_user_func_array([$this->controller,$this->action],$this->params);
         }
         function UrlProcess(){
