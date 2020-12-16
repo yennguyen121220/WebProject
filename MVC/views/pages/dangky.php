@@ -32,6 +32,7 @@
                     Tôi đồng ý với các <a href="">Điều khoản sử dụng</a> & <a href="">Chính sách bảo mật</a>
                 </span>
             </div>
+            
             <div class="input__group-submit-btn">
                 <input type="submit" value="Đăng Ký" name="register" >
             </div>
@@ -40,7 +41,7 @@
                 <a href="./DangNhap" class="form__for-new-user-link">Đăng nhập</a>
             </div>
         </form>
-        <!-- <h1>
+        <h1>
             <?php
                 if(isset($_POST["register"])&&$_POST["register"]=="Đăng Ký"){
                     
@@ -48,7 +49,7 @@
                     
                 }
             ?>
-        </h1> -->
+        </h1>
     </div>
 </div>
 

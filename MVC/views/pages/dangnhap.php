@@ -1,3 +1,9 @@
+<?php
+    if(isset($_SESSION["role"])){
+        unset ($_SESSION["role"]);
+        unset ($_SESSION["username"]);
+    }
+?>
 <div class="main__form" align="center">
     <h1 class="main__heading-form">FORM ĐĂNG NHẬP</h1>
     <div class="main__form-container">
@@ -54,9 +60,11 @@
         <h1>
             <?php
                 if(isset($_POST["login"])&&$_POST["login"]=="Đăng Nhập"){
-                    //kiem tra da co du lieu data['tentaikhoan']!=='' ->thanh cong
+                   if(isset($_SESSION["role"])==false)
+                   {
+                       echo "Sai tài khoản hoặc mật khẩu";
+                   }
 
-                   
                 }
             ?>
         </h1>

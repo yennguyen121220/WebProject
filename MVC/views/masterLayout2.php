@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $data["Page"] ?> - Jolie Clothing</title>
     <!-------- nhúng icon ----------->
 	<link rel="stylesheet" type="text/css" href="http://localhost/DoAn/public/css/fontawesome-free-5.14.0/css/all.min.css">
-    <?php
-        echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/".$data["Page"].".css'>";
-	?>
 	<?php
-		if($data["Page"]=="themsp")
-			echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/dangky.css'>";
+		if($data["Page"]=="dangnhap")
+			echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/dangnhap.css' />";
+		else
+		echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/dangky.css' />";
 	?>
 </head>
 <body>
@@ -38,10 +38,10 @@
                                 <!-- <li><a href="http://localhost/DoAn/DangNhap" title="Đăng nhập">Đăng nhập</a></li> -->
 								
                                 <li>
-									<?php if(isset($_SESSION['user_id'])) : ?>
-										<a href="http://localhost/DoAn/DangNhap">Dangxuat</a>
+									<?php if(isset($_SESSION["role"])) : ?>
+										<a href="http://localhost/DoAn/DangNhap">Đăng xuất</a>
 									<?php else : ?>
-										<a href="http://localhost/DoAn/DangNhap">DangNhap</a>
+										<a href="http://localhost/DoAn/DangNhap">Đăng nhập</a>
 									<?php endif; ?>
 								</li>
 								<!-- <li><a>Dang xuat</a></li> -->
@@ -156,7 +156,7 @@
 	<script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-	<script src="./public/js/main.js"></script>
+	<!-- <script src="./public/js/main.js"></script> -->
 	<?php if(isset($data["result"])) {?>
 		<script>
 			swal({

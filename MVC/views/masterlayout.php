@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
 	<div id="content">
         <div id="menu_top"><!--mo menutop-->
             <div id="logo">
@@ -28,7 +29,15 @@
                     <div id="right">
                         <ul>
                             <li><a href="./DangKy" title="Đăng ký">Đăng ký</a></li>
-                            <li><a href="./DangNhap" title="Đăng nhập">Đăng nhập</a></li>
+							<?php
+								if(isset($_SESSION["username"]))
+									{
+										echo "<li><a href='./DangNhap' title='Đăng xuất'>Đăng xuất</a></li>";
+									}
+                            	else{
+									echo "<li><a href='./DangNhap' title='Đăng Nhập'>Đăng nhập</a></li>";
+								}
+							?>
                         </ul>
                     </div>
                     
@@ -75,11 +84,15 @@
                         <li><a href="./Yem" title="Yếm">Yếm</a></li>
                         <li><a href="./ChanVay" title="Chân váy">Chân váy</a></li>
 						<li><a href="./Vay" title="Váy">Váy</a></li>
-						<li><a>Quản lý</a>
-							<ul class="submenu">
-								<li><a href="./ThemSP">Thêm sản phẩm</a></li>
-							</ul>
-						</li>                
+						<?php
+							if( isset($_SESSION["role"]) && $_SESSION['role']==1 ){
+								echo "<li><a>Quản lý</a>";
+								echo "<ul class='submenu'>";
+								echo "<li><a href='./ThemSP'>Thêm sản phẩm</a></li>";
+								echo "</ul>";
+								echo "</li> ";
+							}
+						?>
                     </ul>
                 </div>
             </div>
@@ -164,7 +177,7 @@
 	</div>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
-	<script src="./public/js/main.js"></script>
+	<!-- <script src="./public/js/main.js"></script> -->
 	
 </body>
 </html>

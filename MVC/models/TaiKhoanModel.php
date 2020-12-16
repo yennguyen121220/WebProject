@@ -4,7 +4,7 @@
 class TaiKhoanModel extends DB{
 
 
-    
+    //them tai khoan
     public function Insert($username, $password,$name,$address,$phoneNum){
         $qr="INSERT INTO taikhoan VALUES('$username','$name','$password','$phoneNum','$address','0')";
         $result = false;
@@ -14,19 +14,13 @@ class TaiKhoanModel extends DB{
         }
         return json_encode($result);
     }
+
+    //dang nhap
     public function Login($username, $password){
-        // $this->con->query('SELECT * FROM taikhoan WHERE tentaikhoan=:username ');
-        // $this->con->bind(':username',$username);
-        // $row =$this->con->single();
         $qr="SELECT * FROM taikhoan WHERE tendangnhap='$username' AND matkhau='$password'";
-        // $user=mysqli_query($this->con,qr);
-        $result=false;
-        if(mysqli_query($this->con,qr)>0){
-            // echo "Dang nhap thanh cong";
-            $result=true;
-        }
-        return json_encode($result);
+        return mysqli_query($this->con,$qr);
     }
+    
     //kiem tra username co bi trung hay khong
     public function checkUsername($username){
         $qr="SELECT tendangnhap FROM taikhoan WHERE tendangnhap='$username'";
@@ -39,17 +33,5 @@ class TaiKhoanModel extends DB{
         return json_encode($kq);
     }
 
-    // public function Login($username, $password){
-    //     $qr="SELECT * FROM taikhoan WHERE tendangnhap='$username' AND matkhau='$password'";
-    //     $rows=mysqli_query($this->con,$qr);
-    //     // $KQ=FALSE;
-    //     if(mysqli_num_rows($rows)>0)
-    //         $kq=true;
-    //     else{
-    //        $kq=false;
-    //     }
-    //     return json_encode($kq);
-    // }
-    
 }
 ?>

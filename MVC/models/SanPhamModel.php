@@ -84,7 +84,7 @@ class SanPhamModel extends DB{
     // public function Insert($loai,)
     public function Insert($loai,$tensp, $gia,$hinhanh,$mota){
         $qr="INSERT INTO sanpham (loai,tensp,gia,hinhanh,mota) VALUES
-        ('$loai','$tensp','$gia','$hinhanh','$mota')";
+        ($loai,'$tensp',$gia,'$hinhanh','$mota')";
         $result = false;
         if(mysqli_query($this->con,$qr))
         {
