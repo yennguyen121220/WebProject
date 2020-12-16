@@ -1,9 +1,4 @@
-<?php
-    if(isset($_SESSION["role"])){
-        unset ($_SESSION["role"]);
-        unset ($_SESSION["username"]);
-    }
-?>
+
 <div class="main__form" align="center">
     <h1 class="main__heading-form">FORM ĐĂNG NHẬP</h1>
     <div class="main__form-container">
@@ -58,5 +53,4 @@
             </div>
         </form>
     </div>
-    
 </div>

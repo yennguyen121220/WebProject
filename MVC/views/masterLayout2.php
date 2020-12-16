@@ -42,9 +42,9 @@
                             <ul>
                                 <li><a href="./DangKy" title="Đăng ký">Đăng ký</a></li>
                                 <?php
-								if(isset($_SESSION["role"]))
+								if(isset($_SESSION["quyen"]))
 									{
-										echo "<li><a href='./DangNhap' title='Đăng xuất'>Đăng xuất</a></li>";
+										echo "<li><a href='./Unset' title='Đăng xuất'>Đăng xuất</a></li>";
 									}
                             	else{
 									echo "<li><a href='./DangNhap' title='Đăng Nhập'>Đăng nhập</a></li>";
@@ -158,5 +158,6 @@
 	</script>
 	
 	<script src="./public/js/main.js"></script>
+
 </body>
 </html>

@@ -30,9 +30,9 @@
                         <ul>
                             <li><a href="./DangKy" title="Đăng ký">Đăng ký</a></li>
 							<?php
-								if(isset($_SESSION["role"]))
+								if(isset($_SESSION["quyen"]))
 									{
-										echo "<li><a href='./DangNhap' title='Đăng xuất'>Đăng xuất</a></li>";
+										echo "<li><a href='./Unset' title='Đăng xuất'>Đăng xuất</a></li>";
 									}
                             	else{
 									echo "<li><a href='./DangNhap' title='Đăng Nhập'>Đăng nhập</a></li>";
@@ -85,7 +85,7 @@
                         <li><a href="./ChanVay" title="Chân váy">Chân váy</a></li>
 						<li><a href="./Vay" title="Váy">Váy</a></li>
 						<?php
-							if( isset($_SESSION["role"]) && $_SESSION['role']==1 ){
+							if( isset($_SESSION["quyen"]) && $_SESSION["quyen"]==1 ){
 								echo "<li><a>Quản lý</a>";
 								echo "<ul class='submenu'>";
 								echo "<li><a href='./ThemSP'>Thêm sản phẩm</a></li>";
@@ -180,6 +180,8 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
 	<script src="./public/js/main.js"></script>
-	
+	<script >
+
+	</script>
 </body>
 </html>

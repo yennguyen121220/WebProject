@@ -21,6 +21,8 @@ class TaiKhoanModel extends DB{
         $qr="SELECT * FROM taikhoan WHERE tendangnhap='$username' AND matkhau='$password'";
         return mysqli_query($this->con,$qr);
     }
+
+
     
     //kiem tra username co bi trung hay khong
     public function checkUsername($username){

@@ -6,6 +6,7 @@ class DangNhap extends Controller
         $this->view("masterLayout2",[
             "Page" =>"dangnhap"
         ]);
+        
     }
 
     function XuLyDangNhap(){
@@ -15,20 +16,19 @@ class DangNhap extends Controller
             $username=$_POST["username"];
             $password=$_POST["password"];
 
-            $_SESSION['test']=$_POST["username"];
 
             $kq=$this->TaiKhoanModel->Login($username, $password);
 
             while($res=mysqli_fetch_array($kq))
             {
                 $_SESSION["username"]=$res["tendangnhap"];
-                $_SESSION["role"]=$res["role"];
+                $_SESSION["quyen"]=$res["role"];
             }
             
             
         }
         
-        if(isset($_SESSION["role"]))
+        if(isset($_SESSION["quyen"]))
         {
             echo '<script type="text/javascript">
            window.location = "http://localhost/DoAn/Home"

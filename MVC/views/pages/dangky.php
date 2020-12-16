@@ -24,7 +24,7 @@
             </div>
             <div class="input__group">
                 <?php
-                    if( isset($_SESSION["role"]) && $_SESSION['role']==1 )
+                    if( isset($_SESSION["quyen"]) && $_SESSION['quyen']==1 )
                     {
                         echo "<select name='role' id='role' required>"; 
                         echo "<option  selected disabled value=''>-----Vui lòng chọn quyền người dùng-----</option>";
