@@ -5,8 +5,9 @@ class TaiKhoanModel extends DB{
 
 
     //them tai khoan
-    public function Insert($username, $password,$name,$address,$phoneNum){
-        $qr="INSERT INTO taikhoan VALUES('$username','$name','$password','$phoneNum','$address','0')";
+    public function Insert($username, $password,$name,$address,$phoneNum,$role){
+
+        $qr="INSERT INTO taikhoan VALUES('$username','$name','$password','$phoneNum','$address','$role')";
         $result = false;
         if(mysqli_query($this->con,$qr))
         {

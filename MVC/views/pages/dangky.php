@@ -22,6 +22,19 @@
             <div class="input__group input__group--margin-bottom-less">
                 <input type="password" name="retype_password" placeholder="Nhập lại mật khẩu" required>
             </div>
+            <div class="input__group">
+                <?php
+                    if( isset($_SESSION["role"]) && $_SESSION['role']==1 )
+                    {
+                        echo "<select name='role' id='role' required>"; 
+                        echo "<option  selected disabled value=''>-----Vui lòng chọn quyền người dùng-----</option>";
+                        echo "<option value='0'>Khách hàng</option>";
+                        echo "<option value='1'>Admin</option>";
+                        echo "</select>";
+                    }
+                ?>
+            </div>
+            
             <div class="input_show-password-check-container">
                 <input type="checkbox" name="showPass" id="">
                 <span>Hiển thị mật khẩu</span>
@@ -38,7 +51,7 @@
             </div>
             <div class="form__for-new-user">
                 <span>Đã có tài khoản? </span>
-                <a href="./DangNhap" class="form__for-new-user-link">Đăng nhập</a>
+                <a href="http://localhost/DoAn/DangNhap" class="form__for-new-user-link">Đăng nhập</a>
             </div>
         </form>
         <h1>

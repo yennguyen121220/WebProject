@@ -92,5 +92,19 @@ class SanPhamModel extends DB{
         }
         return json_encode($result);
     }
+
+    //sua sp
+    public function Update($masp, $loai, $tensp, $gia, $hinhanh, $mota){
+        $qr="UPDATE sanpham SET loai='$loai', tensp='$tensp', gia='$gia', hinhanh='$hinhanh', mota='$mota' WHERE masp='$masp'";
+        $kq=$this->con->query($qr);
+        return $kq;
+    }
+
+    // xoa sp
+    public function Delete($masp){
+        $qr="DELETE FROM sanpham WHERE masp='$masp'";
+        $kq=$this->con->query($qr);
+        return $kq;
+    }
 }
 ?>

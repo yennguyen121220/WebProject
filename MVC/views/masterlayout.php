@@ -30,7 +30,7 @@
                         <ul>
                             <li><a href="./DangKy" title="Đăng ký">Đăng ký</a></li>
 							<?php
-								if(isset($_SESSION["username"]))
+								if(isset($_SESSION["role"]))
 									{
 										echo "<li><a href='./DangNhap' title='Đăng xuất'>Đăng xuất</a></li>";
 									}
@@ -89,6 +89,8 @@
 								echo "<li><a>Quản lý</a>";
 								echo "<ul class='submenu'>";
 								echo "<li><a href='./ThemSP'>Thêm sản phẩm</a></li>";
+								echo "<li><a href='./XoaSP'>Xóa sản phẩm</a></li>";
+								echo "<li><a href='./SuaSP'>Sửa sản phẩm</a></li>";
 								echo "</ul>";
 								echo "</li> ";
 							}
@@ -177,7 +179,7 @@
 	</div>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
-	<!-- <script src="./public/js/main.js"></script> -->
+	<script src="./public/js/main.js"></script>
 	
 </body>
 </html>

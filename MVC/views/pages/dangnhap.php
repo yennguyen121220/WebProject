@@ -57,17 +57,6 @@
                 <a href="./DangKy" class="form__for-new-user-link">Đăng ký</a>
             </div>
         </form>
-        <h1>
-            <?php
-                if(isset($_POST["login"])&&$_POST["login"]=="Đăng Nhập"){
-                   if(isset($_SESSION["role"])==false)
-                   {
-                       echo "Sai tài khoản hoặc mật khẩu";
-                   }
-
-                }
-            ?>
-        </h1>
     </div>
     
 </div>
