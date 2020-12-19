@@ -364,6 +364,55 @@ input[name="UpdateSP"]:hover {
 	transition: all 0.3s ease;
 }
 
+input[name="UpdatePassword"]{
+	width: 200px;
+	background-color: #0e770e;
+	color: #eee;
+	font-weight: 600;
+	font-size: 1.5rem;
+	padding: 10px 0;
+	border: 2px solid #3ab93a;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	margin-top: 15px;
+}
+
+input[name="UpdatePassword"]:hover {
+	color: #3bf73b;
+	background-color: #eee;
+	border-color: #3bf73b;
+	transition: all 0.3s ease;
+}
+
+p.confirm-message {
+	text-align: left;
+	color: rgb(221, 12, 12);
+	font-size: 1.3rem;
+	margin: 2px 0;
+	display: none;
+}
+
+input[name="DeleteKH"]{
+	width: 200px;
+	background-color: #0e770e;
+	color: #eee;
+	font-weight: 600;
+	font-size: 1.5rem;
+	padding: 10px 0;
+	border: 2px solid #3ab93a;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+input[name="DeleteKH"]:hover {
+	color: #3bf73b;
+	background-color: #eee;
+	border-color: #3bf73b;
+	transition: all 0.3s ease;
+}
+
 .form__for-new-user {
 	font-size: 1.4rem;
 }
@@ -376,6 +425,8 @@ input[name="UpdateSP"]:hover {
 .form__for-new-user-link:hover {
 	color: #1a471a;
 }
+
+
 
 /* Footer */
 footer {

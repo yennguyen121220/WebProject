@@ -52,4 +52,14 @@
     </div>
 </div>
 
+<script>
+    var url=window.location.href;
+    if(url=="http://localhost/DoAn/ThemSP/XuLyThem")
+    {
+        setTimeout(function() {
+            window.location="http://localhost/DoAn/ThemSP";
+        }, 20);
+    }
+</script>
+
 

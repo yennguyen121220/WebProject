@@ -63,3 +63,13 @@
         </h1>
     </div>
 </div>
+
+<script>
+    var url=window.location.href;
+    if(url=="http://localhost/DoAn/XoaSP/XuLyXoa")
+    {
+        setTimeout(function() {
+            window.location="http://localhost/DoAn/XoaSP";
+        }, 20);
+    }
+</script>
