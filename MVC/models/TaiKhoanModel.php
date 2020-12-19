@@ -3,8 +3,6 @@
 //nhiem vu la tra ve data ma khach hang yeu call_user_func
 class TaiKhoanModel extends DB{
 
-
-    
     public function Insert($username, $password,$name,$address,$phoneNum){
         $qr="INSERT INTO taikhoan VALUES('$username','$name','$password','$phoneNum','$address','0')";
         $result = false;
@@ -14,6 +12,19 @@ class TaiKhoanModel extends DB{
         }
         return json_encode($result);
     }
+
+    public function Update($username, $password){
+        $qr="UPDATE taikhoan SET matkhau='$password' WHERE tendangnhap='$username'";
+        $result = $this->con->query($qr);
+        return $result;
+    }
+
+    public function Delete($username){
+        $qr="DELETE FROM taikhoan WHERE tendangnhap='$username'";
+        $result = $this->con->query($qr);
+        return $result;
+    }
+
     public function Login($username, $password){
         // $this->con->query('SELECT * FROM taikhoan WHERE tentaikhoan=:username ');
         // $this->con->bind(':username',$username);

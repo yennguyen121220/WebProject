@@ -8,17 +8,17 @@
 	<link rel="stylesheet" type="text/css" href="http://localhost/DoAn/public/css/fontawesome-free-5.14.0/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
-	
-	<!-- <?php
-        echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/".$data["Page"].".css'>";
-	?> -->
+	<!-- dành cho đăng ký và đăng nhập -->
 	<?php
-		if($data["Page"]=="themsp" || $data["Page"]=="suasp" || $data["Page"]=="xoasp")
+        echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/".$data["Page"].".css'>";
+	?>
+	<?php
+		if($data["Page"]=="themsp" || $data["Page"]=="suasp" || $data["Page"]=="xoasp" || $data["Page"]=="suakh" || $data["Page"]=="xoakh")
 			echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/dangky.css'>";
 	?>
 
 	<?php
-		if ($data["Page"]=="suasp" || $data["Page"]=="xoasp")
+		if ($data["Page"]=="suasp" || $data["Page"]=="xoasp" || $data["Page"]=="xoakh")
 		{?>
 			<script src="./public/js/ajaxJS.js"></script>
 		<?php }
@@ -147,20 +147,42 @@
     </div>
 
     <script>
-        // var icon_hide=document.querySelector(".icon-hide");
-        // var icon_show=document.querySelector(".icon-show");
-        // var password=document.querySelector('input[name="password"]');
-        // icon_hide.onclick=function(e) {
-        //     e.target.style.display="none";
-        //     icon_show.style.display="block";
-        //     password.setAttribute('type','text');
-        // }
+		var check_showPassword=document.querySelector('input[name="showPass"]');
+        var icon_hide=document.querySelector(".icon-hide");
+        var icon_show=document.querySelector(".icon-show");
+        var password=document.querySelector('input[name="password"]');
+		var retype_password=document.querySelector('input[name="retype_password"]');
+		if (icon_hide!=null && icon_show!=null)
+		{
+			icon_hide.onclick=function(e) {
+            e.target.style.display="none";
+            icon_show.style.display="block";
+            password.setAttribute('type','text');
+			}
 
-        // icon_show.onclick=function(e) {
-        //     e.target.style.display="none";
-        //     icon_hide.style.display="block";            
-        //     password.setAttribute('type','password');
-        // }
+			icon_show.onclick=function(e) {
+				e.target.style.display="none";
+				icon_hide.style.display="block";            
+				password.setAttribute('type','password');
+			}
+		}
+		
+		if (check_showPassword!=null)
+		{
+			check_showPassword.onchange=function(e) {
+				if (e.target.checked)
+				{
+					password.setAttribute('type','text');
+					retype_password.setAttribute('type','text');
+				}
+				else
+				{
+					password.setAttribute('type','password');
+					retype_password.setAttribute('type','password');
+				}
+			}   
+		}
+		
 	</script>
 	
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
