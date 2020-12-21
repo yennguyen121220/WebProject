@@ -9,8 +9,7 @@ class ChanVay extends Controller{
         $sp=$this->model("SanPhamModel");
         $this->view("masterlayout",[
             "Page" =>"chanvay",
-            "ChanVay" =>$sp->GetChanVay(),
-            "ChanVayGT" =>$sp->ChanVayGT()
+            "ChanVay" =>$sp->GetChanVay()
         ]);
     }
 } 

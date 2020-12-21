@@ -87,12 +87,17 @@ header #menu_top #top_left #find input[type=text]{
 	background:#FFF url(http://localhost/DoAn/public/images/iconsearch.png) no-repeat 1px;
 	text-indent:35px;
 }
-header #menu_top #top_left #find input[type=button]{
+header #menu_top #top_left #find a#btnFind {
 	width:100px;
 	height:40px;
+	outline: none;
 	background:#7fab21;
+	text-decoration: none;
 	color:#FFF;
 	border: 0px;
+	border-radius: 15px 15px 15px 15px;
+	border: #7fab21 solid 12px;
+
 }
 header #menu_top #top_right{
 	width:175px;

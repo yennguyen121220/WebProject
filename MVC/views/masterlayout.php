@@ -16,10 +16,12 @@
                 <a href="http://localhost/DoAn/Home"><img src="http://localhost/DoAn/public/images/logohome1.PNG" alt="LogoJolie" /></a>
             </div>
             <div id="top_left">
-                <div id="find">
-                    <input type="text" id="textFind" />
-                    <input type="button" value="Tìm kiếm" id="btnFind" />
-                </div>
+                <form method="POST" action="http://localhost/DoAn/TimKiem">
+					<div id="find">
+						<input type="text" id="search_name" name="search_name" placeholder="Nhập sản phẩm cần tìm" />
+						<a id="btnFind" name="timkiem">Tìm kiếm</a>
+					</div>
+				</form>
                 <div id="qoute">
                     <h2>Yêu bản thân, may mắn tự nhiên tới</h2> 
                 </div>
@@ -86,11 +88,21 @@
 						<li><a href="./Vay" title="Váy">Váy</a></li>
 						<?php
 							if( isset($_SESSION["quyen"]) && $_SESSION["quyen"]==1 ){
-								echo "<li><a>Quản lý</a>";
+								echo "<li><a>Quản lý sản phẩm</a>";
 								echo "<ul class='submenu'>";
+								echo "";
 								echo "<li><a href='./ThemSP'>Thêm sản phẩm</a></li>";
 								echo "<li><a href='./XoaSP'>Xóa sản phẩm</a></li>";
 								echo "<li><a href='./SuaSP'>Sửa sản phẩm</a></li>";
+								echo "</ul>";
+								echo "</li> ";
+							}
+							if( isset($_SESSION["quyen"]) ){
+								echo "<li><a>Quản lý tài khoản</a>";
+								echo "<ul class='submenu'>";
+								echo "";
+								echo "<li><a href='./XoaKH'>Xóa tài khoản</a></li>";
+								echo "<li><a href='./SuaKH'>Sửa tài khoản</a></li>";
 								echo "</ul>";
 								echo "</li> ";
 							}
@@ -180,8 +192,6 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
 	<script src="./public/js/main.js"></script>
-	<script >
-
-	</script>
+	
 </body>
 </html>

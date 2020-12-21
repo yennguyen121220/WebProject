@@ -12,7 +12,18 @@
     ?>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
-	
+	<?php
+		if ($data["Page"]=="suakh" || $data["Page"]=="xoakh")
+		{?>
+			<script src="./public/js/ajaxKH.js"></script>
+		<?php }
+	?>
+	<?php
+		if ($data["Page"]=="suasp" || $data["Page"]=="xoasp")
+		{?>
+			<script src="./public/js/ajaxJS.js"></script>
+		<?php }
+	?>
 	<?php
 		if($data["Page"]=="dangnhap")
 			echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/dangnhap.css' />";
@@ -28,10 +39,12 @@
                     <a href="http://localhost/DoAn/Home"><img src="http://localhost/DoAn/public/images/logohome1.png" alt="LogoJolie" /></a>
                 </div>
                 <div id="top_left">
-                    <div id="find">
-                        <input type="text" id="textFind" />
-                        <input type="button" value="Tìm kiếm" id="btnFind" />
-                    </div>
+					<form method="POST" action="http://localhost/DoAn/TimKiem">
+						<div id="find">
+							<input type="text" id="search_name" name="search_name" placeholder="Nhập sản phẩm cần tìm" />
+							<a id="btnFind" name="timkiem">Tìm kiếm</a>
+						</div>
+					</form>
                     <div id="qoute">
                         <h2>Yêu bản thân, may mắn tự nhiên tới</h2> 
                     </div>
