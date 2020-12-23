@@ -102,8 +102,27 @@ class SanPhamModel extends DB{
 
     // xoa sp
     public function Delete($masp){
+        // xóa ràng buộc khóa ngoại
+        $delete_FK="ALTER TABLE cthd DROP CONSTRAINT fk_masp";
+        $this->con->query($delete_FK);
+
+        //lấy các thông số sp cần xóa
+        $query="SELECT masp, loai, tensp, gia, hinhanh, mota FROM sanpham WHERE masp='$masp'";
+        $result=$this->con->query($query);
+        $row=$result->fetch_row();
+
+        // insert vào bảng sp Xóa
+        $query="INSERT INTO sanpham_xoa (masp, loai, tensp, gia, hinhanh, mota) VALUES ('$row[0]', '$row[1]', '$row[2]', '$row[3]', '$row[4]','$row[5]')";
+        $this->con->query($query);
+
+        // thực hiện xóa sp
         $qr="DELETE FROM sanpham WHERE masp='$masp'";
         $kq=$this->con->query($qr);
+
+        // tạo lại ràng buộc khóa ngoại
+        $create_FK="ALTER TABLE cthd ADD CONSTRAINT fk_masp FOREIGN KEY (masp) REFERENCES sanpham(masp) ON DELETE CASCADE ON UPDATE CASCADE";
+        $this->con->query($create_FK);
+        
         return $kq;
     }
 }

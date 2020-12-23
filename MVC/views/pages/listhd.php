@@ -98,7 +98,7 @@
                             $str.="
                                 <tr>
                                     <td>{$stt}</td>
-                                    <td>{$arrObj["arraySP"][$i]["tensp"]}</td>
+                                    <td>{$arrObj["arraySP"][$i]["tensp"]} {$arrObj["arraySP"][$i]["isDeleted"]}</td>
                                     <td>{$arrObj["arraySP"][$i]["gia"]}</td>
                                     <td>{$arrObj["arraySP"][$i]["soluong"]}</td>
                                     <td>{$arrObj["arraySP"][$i]["thanhtien"]}</td>
