@@ -2,17 +2,43 @@
     class HoaDonModel extends DB{
 
         public function getAllList_HoaDon(){
+            // lấy list makh đã xóa trong bảng taikhoan_xoa
+            $query="SELECT makh FROM taikhoan_xoa";
+            $resultIDkh=$this->con->query($query);
+            $arrIDKH=[];
+            while($rowIDKHs=$resultIDkh->fetch_row())
+            {
+                array_push($arrIDKH, $rowIDKHs[0]);
+            }
+
+            // lấy tất cả trong hoadon và đánh dấu nếu khách hàng đã xóa
             $qr="SELECT hd.mahd, makh, COUNT(masp) AS 'Số sp đã mua', tien FROM hoadon hd, cthd ct WHERE hd.mahd=ct.mahd GROUP BY ct.mahd";
             $result=$this->con->query($qr);
             $arr1=[];
             while($rows=$result->fetch_assoc())
             {
-                $arrObj= array(
-                    "mahd"=>$rows["mahd"],
-                    "makh"=>$rows["makh"],
-                    "Số sp đã mua"=>$rows["Số sp đã mua"],
-                    "tien"=>$rows["tien"]
-                );
+                // nếu tồn tại trong bảng kh đã xóa
+                if (in_array($rows["makh"], $arrIDKH))
+                {
+                    $arrObj= array(
+                        "isDelete"=>"(Đã xóa)",
+                        "mahd"=>$rows["mahd"],
+                        "makh"=>$rows["makh"],
+                        "Số sp đã mua"=>$rows["Số sp đã mua"],
+                        "tien"=>$rows["tien"]
+                    );
+                }
+                else 
+                {
+                    $arrObj= array(
+                        "isDelete"=>"",
+                        "mahd"=>$rows["mahd"],
+                        "makh"=>$rows["makh"],
+                        "Số sp đã mua"=>$rows["Số sp đã mua"],
+                        "tien"=>$rows["tien"]
+                    );
+                }
+                
                 array_push($arr1, $arrObj);
             }
             return $arr1;
