@@ -30,14 +30,10 @@ class TaiKhoanModel extends DB{
         // $this->con->bind(':username',$username);
         // $row =$this->con->single();
         $qr="SELECT * FROM taikhoan WHERE tendangnhap='$username' AND matkhau='$password'";
-        // $user=mysqli_query($this->con,qr);
-        $result=false;
-        if(mysqli_query($this->con,$qr)>0){
-            // echo "Dang nhap thanh cong";
-            $result=true;
-        }
-        return json_encode($result);
+        $result=$this->con->query($qr);
+        return $result->num_rows;
     }
+    
     //kiem tra username co bi trung hay khong
     public function checkUsername($username){
         $qr="SELECT tendangnhap FROM taikhoan WHERE tendangnhap='$username'";
