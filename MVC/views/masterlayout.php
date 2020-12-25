@@ -30,21 +30,21 @@
                 <div id="right_top">
                     <div id="right">
                         <ul>
-                            <li><a href="./DangKy" title="Đăng ký">Đăng ký</a></li>
+                            <li><a href="http://localhost/DoAn/DangKy" title="Đăng ký">Đăng ký</a></li>
 							<?php
 								if(isset($_SESSION["quyen"]))
 									{
-										echo "<li><a href='./Unset' title='Đăng xuất'>Đăng xuất</a></li>";
+										echo "<li><a href='http://localhost/DoAn/Unset' title='Đăng xuất'>Đăng xuất</a></li>";
 									}
                             	else{
-									echo "<li><a href='./DangNhap' title='Đăng Nhập'>Đăng nhập</a></li>";
+									echo "<li><a href='http://localhost/DoAn/DangNhap' title='Đăng Nhập'>Đăng nhập</a></li>";
 								}
 							?>
                         </ul>
                     </div>
                     
                     <div id="left">
-                        <h3><a href="#">Giỏ hàng</a></h3>
+                        <h3><a href="http://localhost/DoAn/GioHang">Giỏ hàng</a></h3>
                     </div>
                 </div>
                 <div id="right_bottom"><h2><a href="#">Contact us</a></h2></div>
@@ -64,9 +64,13 @@
             </div>
             <div id="duongdan">
                 <nav class="dd">
+					
                     <ul>
-                        <li><a href="./Home" title="Trang chủ">Home</a></li>
-                        <li><a href="#"><?php if($data["Page"]!=="home"){echo $data["Page"]; }?></a></li>
+						<?php
+							if(isset($_SESSION["username"])){
+								echo '<li><a>Chào '.$_SESSION["username"].' (^-^)</a></li>';
+							}
+						?>
                     </ul>
                 </nav>
         	</div>
@@ -87,22 +91,26 @@
                         <li><a href="./ChanVay" title="Chân váy">Chân váy</a></li>
 						<li><a href="./Vay" title="Váy">Váy</a></li>
 						<?php
-							if( isset($_SESSION["quyen"]) && $_SESSION["quyen"]==1 ){
-								echo "<li><a>Quản lý sản phẩm</a>";
-								echo "<ul class='submenu'>";
-								echo "";
-								echo "<li><a href='./ThemSP'>Thêm sản phẩm</a></li>";
-								echo "<li><a href='./XoaSP'>Xóa sản phẩm</a></li>";
-								echo "<li><a href='./SuaSP'>Sửa sản phẩm</a></li>";
-								echo "</ul>";
-								echo "</li> ";
-							}
+							
 							if( isset($_SESSION["quyen"]) ){
-								echo "<li><a>Quản lý tài khoản</a>";
+								echo "<li><a>Cài đặt tài khoản</a>";
 								echo "<ul class='submenu'>";
 								echo "";
 								echo "<li><a href='./XoaKH'>Xóa tài khoản</a></li>";
 								echo "<li><a href='./SuaKH'>Sửa tài khoản</a></li>";
+								echo "</ul>";
+								echo "</li> ";
+							}
+							if( isset($_SESSION["quyen"]) && $_SESSION["quyen"]==1 ){
+								echo "<li><a>Quản lý</a>";
+								echo "<ul class='submenu'>";
+								echo "";
+								echo "<li><a href='./ThemSP'>Thêm sản phẩm</a></li>";
+								echo "<li><a href='./XoaSP'>Xóa sản phẩm</a></li>";
+								echo "<li><a href='./SuaSP'>Cập nhật sản phẩm</a></li>";
+								echo "<li><a href='./XoaKH'>Xóa khách hàng</a></li>";
+								echo "<li><a href='./SuaKH'>Cập nhật khách hàng</a></li>";
+								echo "<li><a href='http://localhost/Doan/ListHD/danhsach'>Danh sách hóa đơn</a></li>";
 								echo "</ul>";
 								echo "</li> ";
 							}

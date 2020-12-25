@@ -182,7 +182,7 @@ body{
 	text-decoration:none;
 	display:block;
 	height:20px;
-	color:#7fab21;
+	color:#F96;
 	border-left:1px solid #7fab21;
 	padding:0px 10px 0px 10px;/*giãn cách theo 4 chiều top left bottom right*/
 } 
@@ -431,6 +431,7 @@ body{
 	font-size:30px;
 	/* font-family:"Comic Sans MS", cursive; */
 }
+
 #content #main #hotdeals .sanpham h3 a{
 	border-bottom:#7fab21;
 	color:#7fab21;
@@ -460,6 +461,21 @@ body{
 	background:#FC6;
 	color:#000;
 }
+
+a.chonmua {
+    border-radius: 15px 15px 15px 15px;
+    text-decoration: none;
+    width: 100px;
+    height: 40px;
+    background: #7fab21;
+    color: #FFF;
+    border: 1px solid #000;
+}
+
+    a.chonmua:hover {
+        background: #FC6;
+        color: #000;
+    }
 
 		/*footer*/
 footer {

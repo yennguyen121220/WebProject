@@ -7,7 +7,9 @@ class TimKiem extends Controller{
     // }
     public function __construct(){
         if(isset($_POST["search_name"])==""){
-            
+            $this->view("masterlayout",[
+                "Page" =>"search"
+            ]);
         }
         else{
             $sp=$this->model("SanPhamModel");

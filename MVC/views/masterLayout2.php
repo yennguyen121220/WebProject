@@ -28,7 +28,22 @@
 		if($data["Page"]=="dangnhap")
 			echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/dangnhap.css' />";
 		else
-		echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/dangky.css' />";
+		{
+			if($data["Page"]=="giohang"){
+				echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/dangky.css' />";
+				echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/giohang.css' />";
+				echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>";
+				echo "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>";
+				echo "<script src='js/jquery-1.11.1.min.js'></script>";
+			}
+			if($data["Page"]=="listhd"){
+				echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/listhd.css' />";
+			}
+			else{
+				echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/dangky.css' />";
+			}
+		}
+		
 	?> 
 </head>
 <body>
@@ -53,20 +68,20 @@
                     <div id="right_top">
                         <div id="right">
                             <ul>
-                                <li><a href="./DangKy" title="Đăng ký">Đăng ký</a></li>
+                                <li><a href="http://localhost/DoAn/DangKy" title="Đăng ký">Đăng ký</a></li>
                                 <?php
 								if(isset($_SESSION["quyen"]))
 									{
-										echo "<li><a href='./Unset' title='Đăng xuất'>Đăng xuất</a></li>";
+										echo "<li><a href='http://localhost/DoAn/Unset' title='Đăng xuất'>Đăng xuất</a></li>";
 									}
                             	else{
-									echo "<li><a href='./DangNhap' title='Đăng Nhập'>Đăng nhập</a></li>";
+									echo "<li><a href='http://localhost/DoAn/DangNhap' title='Đăng Nhập'>Đăng nhập</a></li>";
 								}
 							?>
                             </ul>
                         </div>
                         <div id="left">
-                            <h3><a href="#">Giỏ hàng</a></h3>
+                            <h3><a href="http://localhost/DoAn/GioHang">Giỏ hàng</a></h3>
                         </div>
                     </div>
                     <div id="right_bottom"><h2><a href="#">Contact us</a></h2></div>

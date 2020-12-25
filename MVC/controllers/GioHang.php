@@ -1,5 +1,5 @@
 <?php
-class Home extends Controller{
+class GioHang extends Controller{
     // function SayHi($masp){
     //     // $sp =$this->model("TuiModel");
     //     // echo $sp->GetTui();
@@ -8,9 +8,8 @@ class Home extends Controller{
     // }
     function __construct(){
         $sp=$this->model("SanPhamModel");
-        $this->view("masterlayout",[
-            "Page" =>"home",
-            "GioiThieu"=>$sp->GioiThieu()
+        $this->view("masterlayout2",[
+            "Page" =>"giohang"
         ]);
     }
 } 

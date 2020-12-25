@@ -87,6 +87,7 @@ header #menu_top #top_left #find input[type=text]{
 	background:#FFF url(http://localhost/DoAn/public/images/iconsearch.png) no-repeat 1px;
 	text-indent:35px;
 }
+
 header #menu_top #top_left #find a#btnFind {
 	width:100px;
 	height:40px;
@@ -99,6 +100,7 @@ header #menu_top #top_left #find a#btnFind {
 	border: #7fab21 solid 12px;
 
 }
+
 header #menu_top #top_right{
 	width:175px;
 	float:left;
@@ -153,198 +155,82 @@ header #menu_top #top_right #right_bottom a{
     font-size: 20px;
 	color:#7fab21;
 }
-
 /*--------------*/
 
-
-
-/* Main form */
-.main__form-wrap{
-	line-height: auto;
-}
-.main__form-heading {
-	font-size: 2.8rem;
-	color: #555;
-	margin-top: 0;
+/* Main */
+.main__wrapper {
+	position: relative;
+	margin: 10px 88px;
+	display: flex;
+	justify-content: space-between;
 }
 
-.main_form-container {
-	border: 1px solid #333;
-	width: 550px;	
-	background-color: rgba(170, 255, 170, 0.6);
-	border: 1px solid #bfe078;
-	box-shadow: 1px 1px 5px #8a8d82;
+.main__heading, .main__cthd-heading {
+	font-size: 2.3rem;
+	color: #4c6810;
+	margin: 0;
+	text-align: center;
+}
+
+.main__totalHD {
+	margin: 10px 0;
+}
+
+.main__totalHD-para {
+	margin: 0;
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.main__table {
+	margin-top: 20px;
 }	
 
-form {
-	padding: 20px 0;
-	width: 70%;
-}
-
-.form-heading {
-	margin-top: 0;
-	font-size: 2.2rem;
-	color: #156615;
-}
-
-
-.input__group {
-	margin-bottom: 15px;
-	height: 35px;
-}
-.input__group select{
-	width: 100%;
-	height: 100%;
-	padding-left: 10px;
+table {
+	border-collapse: collapse;
+	text-align: center;
 	font-size: 1.5rem;
-	border-radius: 3px;
-	border: 1px solid #7fab21;
-	border-left-width: 3px;
-	outline: none;
 }
 
-.btn-file-upload{
-	width: 187px;
-	position:relative;
-}
-
-.btn-file-upload:after{
-   content:  attr(value);
-   position: absolute;
-   top: 0;
-   left: 0;
-   bottom: 0;    
-   width: 28%;
-   background:#7fab21;
-   color: white;
-   border-radius: 2px;
-   text-align: center;
-   line-height: 2;
-}
-.input__group input{
-	width: 100%;
-	height: 100%;
-	padding-left: 10px;
-	font-size: 1.5rem;
-	border-radius: 3px;
-	border: 1px solid #7fab21;
-	border-left-width: 3px;
-	outline: none;
-}
-.input__group--margin-bottom-less {
-	margin-bottom: 5px;
-}
-
-.input__group--flex,
-.input_show-password-check-container {
+.main__cthd-table th, .main__cthd-table td {
 	text-align: left;
-	display: flex;
-	align-items: center;
 }
 
-.input_show-password-check-container {
-	margin-bottom: 15px;
-}
-
-input[name="showPass"] {
-	margin-left: 0;
-	margin-bottom: 1px;
-	margin-right: 5px;
-	position: relative;
-}
-
-input[name="showPass"] + span {
-	font-size: 1.3rem;
-	color: #291ca0;
-}
-
-input[name="showPass"]::after {
-	content: "";
-	position: absolute;
-	left: 16px;
-	width: 108px;
-	height: 15px;
-}
-
-input[name="check"] {
-	height: 13px;
-	width: 13px;
-	margin-left: 0;
-	margin-bottom: 1px;
-	margin-right: 5px;
-	position: relative;
-}
-
-input[name="check"]::after {
-	content: "";
-	position: absolute;
-	left: 18px;
-	top: -1px;
-	width: 108px;
-	height: 15px;
-}
-
-input[name="check"]::before {
-	content: "";
-	position: absolute;
-	left: 243px;
-	width: 16px;
-	height: 15px;
-}
-
-input[name="check"] + span {
-	font-size: 1.3rem;
-}
-
-input[name="check"] + span a {
-	text-decoration: none;
-	color: #286d28;
-}
-
-input[name="check"] + span a:hover {
-	color: #1a471a;
-}
-
-.input__group-submit-btn {
-	margin-bottom: 25px;
-}
-
-input[name="register"]{
-	width: 200px;
-	background-color: #0e770e;
-	color: #eee;
-	font-weight: 600;
+th {
 	font-size: 1.5rem;
-	padding: 10px 0;
-	border: 2px solid #3ab93a;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: all 0.3s ease;
 }
 
-input[name="register"]:hover {
-	color: #3bf73b;
-	background-color: #eee;
-	border-color: #3bf73b;
-	transition: all 0.3s ease;
+th, td {
+	padding: 5px 8px;
 }
 
-.form__for-new-user {
-	font-size: 1.4rem;
+.totalMoney__row th, .totalMoney__row td {
+	font-size: 1.9rem;
 }
 
-.form__for-new-user-link {
-	color: #286d28;
-	text-decoration: none;
+.main__container-cthd {
+	position: sticky;
+	top: 15px;
 }
 
-.form__for-new-user-link:hover {
-	color: #1a471a;
+.main__cthd-table {
+	margin-top: 18px;
 }
+
+.main__cthd-table-listsp {
+	margin: 8px 0;
+}
+
+.main__cthd-table-listsp td {
+	text-align: center;
+}
+
+
+
 
 /* Footer */
 footer {
-    margin-top: 100px;
+    margin-top: 80px;
 	background-color: #f2f2f2;
 }
 
@@ -434,70 +320,4 @@ footer {
 
 .footer-wrap-copyright-link:hover {
 	text-decoration: underline;
-}
-
-
-/*--------chi tiet sp-----------*/
-
-.container main .main_form-container{
-	min-width: 800px;
-	min-height: 500px;
-}
-.container main .main_form-container .data_left{
-	float: left;
-	width: 400px;
-	height: 400px;
-}
-.container main .main_form-container .data_left img{
-	
-	width: 400px;
-	height: 450px;
-}
-.container main .main_form-container .data_right{
-	width: 700px;
-	height: auto;
-}
-.container main .main_form-container .data_right th{
-	width: 200px;
-
-}
-
-.container main .main_form-container .data_right h1{
-	font-size:20px;
-	font-family: "Comic Sans MS", cursive;
-	color:#7fab21;
-	text-align: left;
-}
-.container main .main_form-container .data_right h3{
-	font-size:16px;
-	font-family: "Comic Sans MS", cursive;
-	color: #F96;
-}
-.container main .main_form-container .data_right input[type=button]{
-	background-color: #F96;
-	color: #FFF;
-}
-.container main .main_form-container .cn{
-	clear: both;
-	margin-bottom:0px;
-}
-
-.container main .main_form-container .data_right input__group-submit-btn  {
-    width: 100px;
-    clear:both;
-    height: 40px;
-    outline: none;
-    background: #7fab21;
-    text-decoration: none;
-    color: #FFF;
-    border-radius: 15px 15px 15px 15px;
-    border: #7fab21 solid 12px;
-}
-
-.tbl a {
-    text-decoration: none;
-    background: #7fab21;
-    border: #7fab21 solid 10px;
-    border-radius: 15px 15px 15px 15px;
-    color:#FFF;
 }
