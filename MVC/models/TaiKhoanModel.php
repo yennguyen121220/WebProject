@@ -20,8 +20,22 @@ class TaiKhoanModel extends DB{
     }
 
     public function Delete($username){
+        // xóa ràng buộc khóa ngoại
+        $delete_FK="ALTER TABLE hoadon DROP CONSTRAINT fk_makh";
+        $this->con->query($delete_FK);
+
+        // insert vào bảng taikhoan_xoa
+        $query="INSERT INTO taikhoan_xoa(makh) VALUES ('$username')";
+        $this->con->query($query);
+
+        // xóa khách hàng
         $qr="DELETE FROM taikhoan WHERE tendangnhap='$username'";
         $result = $this->con->query($qr);
+
+        // tạo lại ràng buộc
+        $create_FK="ALTER TABLE hoadon ADD CONSTRAINT fk_makh FOREIGN KEY (makh) REFERENCES taikhoan(tendangnhap) ON DELETE CASCADE ON UPDATE CASCADE";
+        $this->con->query($create_FK);
+
         return $result;
     }
 

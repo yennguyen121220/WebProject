@@ -32,7 +32,7 @@
                             <tr>
                                 <td>{$index}</td>
                                 <td>{$arr1[$i]["mahd"]}</td>
-                                <td>{$arr1[$i]["makh"]}</td>
+                                <td>{$arr1[$i]["makh"]} {$arr1[$i]["isDelete"]}</td>
                                 <td>{$arr1[$i]["Số sp đã mua"]}</td>
                                 <td>{$arr1[$i]["tien"]} đ</td>
                                 <td>
