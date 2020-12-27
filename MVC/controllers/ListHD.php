@@ -7,6 +7,7 @@
             //     "Page"=>"listhd",
             //     "listHoaDon"=>$this->HoaDonModel->getAllList_HoaDon()
             // ]);
+            // echo "yenzt nhat qua dat";
         }
 
         function danhsach(){

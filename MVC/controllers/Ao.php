@@ -8,8 +8,7 @@ class Ao extends Controller{
         $sp=$this->model("SanPhamModel");
         $this->view("masterlayout",[
             "Page" =>"ao",
-            "Ao" =>$sp->GetAo(),
-            "AoGT"=>$sp->AoGT()
+            "Ao" =>$sp->GetAo()
         ]);
     }
 } 

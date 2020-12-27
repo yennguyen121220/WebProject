@@ -118,59 +118,6 @@
                         echo $str;
                     }
                 ?>
-                <!-- <table class="main__cthd-table">
-                    <tr>
-                        <th>Mã hóa đơn</th>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <th>Mã khách hàng</th>
-                        <td>antran</td>
-                    </tr>
-                    <tr>
-                        <th>Tên người nhận</th>
-                        <td>Nguyễn Văn Thanh</td>
-                    </tr>
-                    <tr>
-                        <th>Địa chỉ nhận hàng</th>
-                        <td>Quận 1, TP HCM</td>
-                    </tr>
-                    <tr>
-                        <th>Số điện thoại</th>
-                        <td>0387728892</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <table border="1px" class="main__cthd-table-listsp">
-                                <tr>
-                                    <th>STT</th>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Tiền</th>
-                                    <th>Số lượng</th>
-                                    <th>Thành tiền</th>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Túi đeo chéo</td>
-                                    <td>150000</td>
-                                    <td>2</td>
-                                    <td>300000</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Túi đeo chéo</td>
-                                    <td>140000</td>
-                                    <td>1</td>
-                                    <td>140000</td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr class="totalMoney__row">
-                        <th style="text-align: center;">Tổng tiền</th>
-                        <td style="font-weight: bold;">440000</td>
-                    </tr>
-                </table> -->
             </div>
         </div>
     </div>

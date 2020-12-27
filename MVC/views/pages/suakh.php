@@ -1,6 +1,6 @@
 <div class="main__form-wrap" align="center">
     <div class="main_form-container">
-        <form action="./SuaKH" method="POST">
+        <form action="./SuaKH/XuLySua" method="POST">
             <h2 class="form-heading">Sửa mật khẩu</h2>
 
             <div class="input__group">
@@ -30,7 +30,10 @@
             <?php
                 if (isset($data['Kq']))
                 {
-                    echo $data['Kq'];
+                    if ($data['Kq'])
+                        echo "Sửa thành công";
+                    else 
+                        echo "Sửa thất bại";
                 }
             ?>
         </h1>
@@ -46,21 +49,24 @@
         if (confirmPassword===password)
         {
             document.querySelector('p.confirm-message').innerText="Xác thực đúng";
-            document.querySelector('input[name="UpdatePassword"]').setAttribute("type", "submit");
         }
         else 
         {
             document.querySelector('p.confirm-message').innerText="Xác thực sai";
-            document.querySelector('input[name="UpdatePassword"]').setAttribute("type", "button");
         }
         document.querySelector('p.confirm-message').style.display="block";
     }
-    // var url=window.location.href;
-    // if(url=="http://localhost/DoAn/SuaKH/XuLySua")
-    // {
-    //     setTimeout(function() {
-    //         window.location="http://localhost/DoAn/SuaKH";
-    //     }, 20);
-    // }
+
+    confirmOldInput.onblur=function(e) {
+        
+    }
+
+    var url=window.location.href;
+    if(url=="http://localhost/DoAn/SuaKH/XuLySua")
+    {
+        setTimeout(function() {
+            window.location="http://localhost/DoAn/SuaKH";
+        }, 20);
+    }
 
 </script>

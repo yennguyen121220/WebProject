@@ -1,5 +1,5 @@
 <?php
-    $conn=new mysqli('localhost', 'root', '', 'dbwebproject');
+    $conn=new mysqli('localhost', 'root', '', 'dbforwebproject');
     if (!$conn)
     {
         die("Lỗi");

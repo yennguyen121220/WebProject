@@ -21,8 +21,7 @@ class Tui extends Controller{
         $sp=$this->model("SanPhamModel");
         $this->view("masterlayout",[
             "Page" =>"tui",
-            "Tui" =>$sp->GetTui(),
-            "TuiGT" =>$sp->TuiGT()
+            "Tui" =>$sp->GetTui()
         ]);
     }
 } 
