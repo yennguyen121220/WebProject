@@ -119,7 +119,7 @@ class SanPhamModel extends DB{
         return mysqli_query($this->con,$sql);
     }
 
-
+    //chi tiet san pham
     public function ChiTietSP($masp){
         $qr="SELECT * FROM sanpham WHERE masp='$masp'";
         return mysqli_query($this->con,$qr);

@@ -72,12 +72,12 @@
                         $error = "Bạn chưa mua sản phẩm nào";
                     }
                             if($error == false && !empty($_POST['quantity'])){ //$error=false tức là các ô đã nhập đầy đủ
-                            $products = mysqli_query($this->con,"SELECT * FROM `sanpham` WHERE `masp` IN(".implode(",", array_keys($_POST['quantity'])).")");
-                            $total2 = 0;
-                            $orderProduct = array(); //tạo mảng mới
-                            while($row = mysqli_fetch_array($products)){
-                                $orderProduct[] = $row;
-                                $total2 += $row['gia'] * $_POST['quantity'][$row['masp']];
+                                $products = mysqli_query($this->con,"SELECT * FROM `sanpham` WHERE `masp` IN(".implode(",", array_keys($_POST['quantity'])).")");
+                                $total2 = 0;
+                                $orderProduct = array(); //tạo mảng mới
+                                while($row = mysqli_fetch_array($products)){
+                                    $orderProduct[] = $row;
+                                    $total2 += $row['gia'] * $_POST['quantity'][$row['masp']];
                             }
                             $insertorder = mysqli_query($this->con, "INSERT INTO `khachhang` (`makh`, `tenkh`, `sdt`, `diachi`, `ghichu`, `tongtien`) VALUES (NULL, '".$_POST['name']."', '".$_POST['phone']."', '".$_POST['address']."', '".$_POST['note']."', '".$total2."')");
                             $IDorder = $this->con->insert_id;

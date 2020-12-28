@@ -21,6 +21,7 @@ $(document).ready(function() {
                 $('input[name="tensp"]').val(data[0]["tensp"]);
                 $('input[name="gia"]').val(data[0]["gia"]);
                 $('input[name="mota"]').val(data[0]["mota"]);
+                $('input[name="tenhinhanh"]').val("./public/images/"+data[0]["hinhanh"]);
                 $('.input__group img').attr("src", "./public/images/"+data[0]["hinhanh"]);
                 
                 // ajax chọn tên sp
@@ -38,6 +39,7 @@ $(document).ready(function() {
                             $('input[name="tensp"]').val(data[0]["tensp"]);
                             $('input[name="gia"]').val(data[0]["gia"]);
                             $('input[name="mota"]').val(data[0]["mota"]);
+                            $('input[name="tenhinhanh"]').val("./public/images/"+data[0]["hinhanh"]);
                             $('.input__group img').attr("src", "./public/images/"+data[0]["hinhanh"]);
                         }
                     })

@@ -52,16 +52,7 @@
 
         public function getCTHD($id) {
             $tendangnhap=$_SESSION["username"];
-            // query 1: lấy thông tin hóa đơn
-            // $qr1="SELECT DISTINCT hd.mahd, makh, hoten, diachi, sdt, tien FROM hoadon hd, cthd ct WHERE hd.mahd=ct.mahd AND hd.mahd={$id} AND makh='$tendangnhap'";
-            // $result1=$this->con->query($qr1);
-            // if ($result1->num_rows == 1)
-            // {
-                
-            // }
-            // $row1=$result1->fetch_assoc();
-
-            
+         
             // lấy tất cả masp trong 1 mã hd
             $qrCount="SELECT ct.masp FROM cthd ct, hoadon hd WHERE hd.mahd='$id' AND hd.makh='$tendangnhap' AND hd.mahd=ct.mahd";
             $resultCount=$this->con->query($qrCount);
@@ -149,17 +140,6 @@
                     "tien"=>""
                 );
             }
-            
-
-            // $arr=array(
-            //     "mahd"=>$row1["mahd"],
-            //     "makh"=>$row1["makh"],
-            //     "hoten"=>$row1["hoten"],
-            //     "diachi"=>$row1["diachi"],
-            //     "sdt"=>$row1["sdt"],
-            //     "arraySP"=>$arr2,
-            //     "tien"=>$row1["tien"],
-            // );
             
             return $arr;
         }

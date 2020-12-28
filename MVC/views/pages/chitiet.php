@@ -7,7 +7,8 @@
     <?php
         while($row=mysqli_fetch_array($data["CT"]))
 		{
-
+            
+            $_SESSION["masp"]=$row["masp"];
             echo '<div class="data_left">';
             echo   ' <img src="http://localhost/DoAn/public/images/'.$row["hinhanh"].'" alt="hinh ảnh">';
             echo '</div>';
@@ -21,7 +22,6 @@
             echo    '<tr>';
             echo        '<th><h1>Mã sản phẩm</h1></th>';
             echo       ' <td><h3>'.$row["masp"].'</span></h3>';
-            
             echo    ' </tr>';
             echo    '<tr>';
             echo        '<th><h1>Mã loại sản phẩm</h1></th>';

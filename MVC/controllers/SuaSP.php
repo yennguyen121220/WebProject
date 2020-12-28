@@ -3,9 +3,8 @@
     class SuaSp extends Controller{
         public $SanPhamModel;
         function __construct(){
-            if(isset($_SESSION["idsp"])){
-                $masp=$_SESSION["idsp"];
-                echo $masp;
+            if(isset($_SESSION["masp"])){
+                $masp = $_SESSION["masp"];
                 $this->SanPhamModel=$this->model("SanPhamModel");
                 $this->view("masterLayout2", [
                     "Page"=> "suasp",
@@ -18,7 +17,9 @@
                     "Page"=> "suasp"
                 ]);
             }
-            
+            if(isset($_SESSION["masp"])){
+                unset($_SESSION["masp"]);
+            }
         }
 
         // function suasp(){
@@ -41,6 +42,7 @@
             // update sp admin nhập
             $kq=$this->SanPhamModel->Update($masp, $loai, $tensp, $gia, $hinhanh, $mota);
 
+            
             // hiển thị lên đã update thành công hay chưa
             $this->view("masterLayout2", [
                 "Page"=>"suasp",
