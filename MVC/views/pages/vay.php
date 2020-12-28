@@ -15,7 +15,8 @@
 			echo "<label>".$row["tensp"]."<br><em>thời trang thu đông</em></label>";
             echo "<p>Giá: <span id='gia'>".$row["gia"]."</span></p>";
 			echo "<form class='chonmua'>";
-            echo "<input type='button' value='Thêm vào giỏ'>";
+            echo "<a href='http://localhost/DoAn/ChiTietSP/ChiTiet/".$row["masp"]."' class='chonmua'>Đặt mua</a>";
+            echo "<a href='http://localhost/DoAn/ChiTietSP/ChiTiet/".$row["masp"]."' class='chonmua'>Chi tiết</a>";
             echo "</form></span></div></li></ul>";
             echo "`;";
         }

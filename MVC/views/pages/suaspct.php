@@ -2,65 +2,25 @@
     <div class="main_form-container">
         <form action="./SuaSP/XuLySua" method="POST">
             <h2 class="form-heading">Sửa sản phẩm của cửa hàng</h2>
-            <div class="input__group">
-                <select name="loaisp" id="loai" required>
-                    <option  selected disabled value="">-----Vui lòng chọn loại sản phẩm-----</option>
-                    <option value="1">Túi</option>
-                    <option value="2">Giày, dép</option>
-                    <option value="3">Áo</option>
-                    <option value="4">Quần</option>
-                    <option value="5">Yếm</option>
-                    <option value="6">Chân váy</option>
-                    <option value="7">Váy</option>
-                </select>
-            </div>
-            
-            <div class="input__group">
-                <select name="loaisp" id="ten" required>
-                    <option  selected disabled value="">-----Vui lòng chọn sản phẩm cần thay đổi-----</option>
-                </select>
-            </div>
             <?php
-                if(isset($_SESSION["idsp"])){
-                    while($row=mysqli_fetch_array($data["CT"])){ 
-            ?>
+                while($row=mysqli_fetch_array($data["CT"])){ ?>
                 <div class="input__group">
-                    <input type="text" name="masp" value="<?php echo $row["masp"] ?>"  readonly>
+                    <input type="text" name="masp" value="<?php echo $row["masp"] ?>" readonly>
                 </div>
                 <div class="input__group">
-                    <input type="text" name="loai" readonly>
+                    <input type="text" name="loai" value="<?php echo $row["loai"] ?>" readonly>
                 </div>
                 <div class="input__group">
-                    <input type="text" name="tensp" required>
+                    <input type="text" name="tensp" value="<?php echo $row["tensp"] ?>" required>
                 </div>
                 <div class="input__group">
-                    <input type="text" name="gia" required>
+                    <input type="text" name="gia" value="<?php echo $row["gia"] ?>" required>
                 </div>
-            <?php   }
-            }
-            else{
-
-            ?>
-          
-            <div class="input__group">
-                <input type="text" name="masp" placeholder="Mã sản phẩm" value="<?php if(isset($_SESSION["idsp"])){ echo $_SESSION['idsp']; }  ?>"  readonly>
-            </div>
-            <div class="input__group">
-                <input type="text" name="loai" placeholder="Loại sản phẩm" readonly>
-            </div>
-            <div class="input__group">
-                <input type="text" name="tensp" placeholder="Tên sản phẩm" required>
-            </div>
-            <div class="input__group">
-                <input type="text" name="gia" placeholder="Giá sản phẩm" required>
-            </div>
-           <?php
-                }
-            ?>
-            <div class="input__group">
-                <input type="textarea"  name="mota" value="<?php if(isset($_SESSION["idsp"])){echo "masp"; }  ?>">
-                <!-- <textarea rows = "5" cols = "50" name = "mota" placeholder="Viết mô tả sản phẩm">Mo ta sp</textarea> -->
-            </div>
+                <div class="input__group">
+                    <input type="textarea"  name="mota" value="<?php echo $row["mota"] ?>">
+                    <!-- <textarea rows = "5" cols = "50" name = "mota" placeholder="Viết mô tả sản phẩm">Mo ta sp</textarea> -->
+                </div>
+            <?php } ?>
             <!-- <div class="input__group">
                
                 <input type="file" class="btn-file-upload" name="hinhanh" value="hình ảnh"/>

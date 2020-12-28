@@ -1,11 +1,17 @@
 <?php
     class HoaDonModel extends DB{
 
+        public function hoadonkh(){
+            $makh=$_SESSION["username"];
+            $qr="SELECT * FROM hoadon WHERE makh='$makh'";
+            return mysqli_query($this->con,$qr);
+        }
+
         public function getAllList_HoaDon(){
             // lấy list makh đã xóa trong bảng taikhoan_xoa
             $query="SELECT makh FROM taikhoan_xoa";
             $resultIDkh=$this->con->query($query);
-            $arrIDKH=[];
+            $arrIDKH=[]; 
             while($rowIDKHs=$resultIDkh->fetch_row())
             {
                 array_push($arrIDKH, $rowIDKHs[0]);
@@ -45,13 +51,19 @@
         }
 
         public function getCTHD($id) {
+            $tendangnhap=$_SESSION["username"];
             // query 1: lấy thông tin hóa đơn
-            $qr1="SELECT DISTINCT hd.mahd, makh, hoten, diachi, sdt, tien FROM hoadon hd, cthd ct WHERE hd.mahd=ct.mahd AND hd.mahd={$id}";
-            $result1=$this->con->query($qr1);
-            $row1=$result1->fetch_assoc();
+            // $qr1="SELECT DISTINCT hd.mahd, makh, hoten, diachi, sdt, tien FROM hoadon hd, cthd ct WHERE hd.mahd=ct.mahd AND hd.mahd={$id} AND makh='$tendangnhap'";
+            // $result1=$this->con->query($qr1);
+            // if ($result1->num_rows == 1)
+            // {
+                
+            // }
+            // $row1=$result1->fetch_assoc();
 
+            
             // lấy tất cả masp trong 1 mã hd
-            $qrCount="SELECT masp FROM cthd WHERE mahd='$id'";
+            $qrCount="SELECT ct.masp FROM cthd ct, hoadon hd WHERE hd.mahd='$id' AND hd.makh='$tendangnhap' AND hd.mahd=ct.mahd";
             $resultCount=$this->con->query($qrCount);
             $arrMasp=[]; // tạo 1 array chứa các masp của 1 mahd để thực hiện kiểm tra vs bảng sp_xoa
             while($rowCount=$resultCount->fetch_row())
@@ -89,7 +101,7 @@
                     if (in_array($rowIDs[0], $arrMasp))
                     {
                         // lấy thông tin 2 bảng cthd và sanpham_xoa
-                        $qrSPXoa="SELECT spXoa.tensp, spXoa.gia, ct.soluong, ct.thanhtien FROM cthd ct, sanpham_xoa spXoa WHERE ct.masp={$rowIDs[0]} AND spXoa.masp={$rowIDs[0]}";
+                        $qrSPXoa="SELECT spXoa.tensp, spXoa.gia, ct.soluong, ct.thanhtien FROM cthd ct, sanpham_xoa spXoa WHERE ct.masp={$rowIDs[0]} AND spXoa.masp={$rowIDs[0]} ";
                         $resultSpXoa=$this->con->query($qrSPXoa);
                         $rowSPXoa=$resultSpXoa->fetch_row();
                         $arrSP=array(
@@ -104,15 +116,50 @@
                 }
             }
 
-            $arr=array(
-                "mahd"=>$row1["mahd"],
-                "makh"=>$row1["makh"],
-                "hoten"=>$row1["hoten"],
-                "diachi"=>$row1["diachi"],
-                "sdt"=>$row1["sdt"],
-                "arraySP"=>$arr2,
-                "tien"=>$row1["tien"],
-            );
+            // query 1: lấy thông tin hóa đơn
+            if ($tendangnhap=="admin")
+                $qr1="SELECT DISTINCT hd.mahd, makh, hoten, diachi, sdt, tien FROM hoadon hd, cthd ct WHERE hd.mahd=ct.mahd AND hd.mahd={$id}";
+            else 
+                $qr1="SELECT DISTINCT hd.mahd, makh, hoten, diachi, sdt, tien FROM hoadon hd, cthd ct WHERE hd.mahd=ct.mahd AND hd.mahd={$id} AND makh='$tendangnhap'";
+            $result1=$this->con->query($qr1);
+            // neu dung makh
+            if ($result1->num_rows == 1 || $tendangnhap=="admin")
+            {
+                $row1=$result1->fetch_assoc();
+                $arr=array(
+                    "mahd"=>$row1["mahd"],
+                    "makh"=>$row1["makh"],
+                    "hoten"=>$row1["hoten"],
+                    "diachi"=>$row1["diachi"],
+                    "sdt"=>$row1["sdt"],
+                    "arraySP"=>$arr2,
+                    "tien"=>$row1["tien"],
+                );
+            }
+            // neu sai
+            else 
+            {
+                $arr=array(
+                    "mahd"=>"",
+                    "makh"=>"",
+                    "hoten"=>"",
+                    "diachi"=>"",
+                    "sdt"=>"",
+                    "arraySP"=>[],
+                    "tien"=>""
+                );
+            }
+            
+
+            // $arr=array(
+            //     "mahd"=>$row1["mahd"],
+            //     "makh"=>$row1["makh"],
+            //     "hoten"=>$row1["hoten"],
+            //     "diachi"=>$row1["diachi"],
+            //     "sdt"=>$row1["sdt"],
+            //     "arraySP"=>$arr2,
+            //     "tien"=>$row1["tien"],
+            // );
             
             return $arr;
         }

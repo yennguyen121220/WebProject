@@ -22,7 +22,6 @@ $(document).ready(function() {
                 $('input[name="gia"]').val(data[0]["gia"]);
                 $('input[name="mota"]').val(data[0]["mota"]);
                 $('.input__group img').attr("src", "./public/images/"+data[0]["hinhanh"]);
-                $('input[name="tenhinhanh"]').val("./public/images/"+data[0]["hinhanh"]);
                 
                 // ajax chọn tên sp
                 $("#ten").change(function(e) {
@@ -40,14 +39,12 @@ $(document).ready(function() {
                             $('input[name="gia"]').val(data[0]["gia"]);
                             $('input[name="mota"]').val(data[0]["mota"]);
                             $('.input__group img').attr("src", "./public/images/"+data[0]["hinhanh"]);
-                            $('input[name="tenhinhanh"]').val("./public/images/"+data[0]["hinhanh"]);
                         }
                     })
                 })
             }
         })
     })
-
     $("#usernameKH").change(function(e) {
         $.ajax({
             url: "./ajaxKH.php",

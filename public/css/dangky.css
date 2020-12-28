@@ -87,12 +87,17 @@ header #menu_top #top_left #find input[type=text]{
 	background:#FFF url(http://localhost/DoAn/public/images/iconsearch.png) no-repeat 1px;
 	text-indent:35px;
 }
-header #menu_top #top_left #find input[type=button]{
+header #menu_top #top_left #find a#btnFind {
 	width:100px;
 	height:40px;
+	outline: none;
 	background:#7fab21;
+	text-decoration: none;
 	color:#FFF;
 	border: 0px;
+	border-radius: 15px 15px 15px 15px;
+	border: #7fab21 solid 12px;
+
 }
 header #menu_top #top_right{
 	width:175px;
@@ -299,12 +304,12 @@ input[name="check"] + span a {
 input[name="check"] + span a:hover {
 	color: #1a471a;
 }
-
 .input__group-submit-btn {
 	margin-bottom: 25px;
+    margin-top:40px;
 }
 
-input[name="register"]{
+input[name="register"], input[name="UpdatePassword"], input[name="DeleteSP"], input[name="UpdateSP"], input[name="DeleteKH"]{
 	width: 200px;
 	background-color: #0e770e;
 	color: #eee;
@@ -317,96 +322,7 @@ input[name="register"]{
 	transition: all 0.3s ease;
 }
 
-input[name="register"]:hover {
-	color: #3bf73b;
-	background-color: #eee;
-	border-color: #3bf73b;
-	transition: all 0.3s ease;
-}
-
-input[name="DeleteSP"]{
-	width: 200px;
-	background-color: #0e770e;
-	color: #eee;
-	font-weight: 600;
-	font-size: 1.5rem;
-	padding: 10px 0;
-	border: 2px solid #3ab93a;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: all 0.3s ease;
-}
-
-input[name="DeleteSP"]:hover {
-	color: #3bf73b;
-	background-color: #eee;
-	border-color: #3bf73b;
-	transition: all 0.3s ease;
-}
-
-input[name="UpdateSP"]{
-	width: 200px;
-	background-color: #0e770e;
-	color: #eee;
-	font-weight: 600;
-	font-size: 1.5rem;
-	padding: 10px 0;
-	border: 2px solid #3ab93a;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: all 0.3s ease;
-}
-
-input[name="UpdateSP"]:hover {
-	color: #3bf73b;
-	background-color: #eee;
-	border-color: #3bf73b;
-	transition: all 0.3s ease;
-}
-
-input[name="UpdatePassword"]{
-	width: 200px;
-	background-color: #0e770e;
-	color: #eee;
-	font-weight: 600;
-	font-size: 1.5rem;
-	padding: 10px 0;
-	border: 2px solid #3ab93a;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	margin-top: 15px;
-}
-
-input[name="UpdatePassword"]:hover {
-	color: #3bf73b;
-	background-color: #eee;
-	border-color: #3bf73b;
-	transition: all 0.3s ease;
-}
-
-p.confirm-message {
-	text-align: left;
-	color: rgb(221, 12, 12);
-	font-size: 1.3rem;
-	margin: 2px 0;
-	display: none;
-}
-
-input[name="DeleteKH"]{
-	width: 200px;
-	background-color: #0e770e;
-	color: #eee;
-	font-weight: 600;
-	font-size: 1.5rem;
-	padding: 10px 0;
-	border: 2px solid #3ab93a;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: all 0.3s ease;
-}
-
-input[name="DeleteKH"]:hover {
+input[name="register"]:hover, input[name="UpdatePassword"]:hover, input[name="DeleteSP"]:hover, input[name="UpdateSP"]:hover,input[name="DeleteKH"]:hover {
 	color: #3bf73b;
 	background-color: #eee;
 	border-color: #3bf73b;
@@ -425,8 +341,6 @@ input[name="DeleteKH"]:hover {
 .form__for-new-user-link:hover {
 	color: #1a471a;
 }
-
-
 
 /* Footer */
 footer {
@@ -520,4 +434,70 @@ footer {
 
 .footer-wrap-copyright-link:hover {
 	text-decoration: underline;
+}
+
+
+/*--------chi tiet sp-----------*/
+
+.container main .main_form-container{
+	min-width: 800px;
+	min-height: 500px;
+}
+.container main .main_form-container .data_left{
+	float: left;
+	width: 400px;
+	height: 400px;
+}
+.container main .main_form-container .data_left img{
+	
+	width: 400px;
+	height: 450px;
+}
+.container main .main_form-container .data_right{
+	width: 700px;
+	height: auto;
+}
+.container main .main_form-container .data_right th{
+	width: 200px;
+
+}
+
+.container main .main_form-container .data_right h1{
+	font-size:20px;
+	font-family: "Comic Sans MS", cursive;
+	color:#7fab21;
+	text-align: left;
+}
+.container main .main_form-container .data_right h3{
+	font-size:16px;
+	font-family: "Comic Sans MS", cursive;
+	color: #F96;
+}
+.container main .main_form-container .data_right input[type=button]{
+	background-color: #F96;
+	color: #FFF;
+}
+.container main .main_form-container .cn{
+	clear: both;
+	margin-bottom:0px;
+}
+
+.container main .main_form-container .data_right input__group-submit-btn  {
+    width: 100px;
+    clear:both;
+    height: 40px;
+    outline: none;
+    background: #7fab21;
+    text-decoration: none;
+    color: #FFF;
+    border-radius: 15px 15px 15px 15px;
+    border: #7fab21 solid 12px;
+}
+
+.tbl a {
+    text-decoration: none;
+    background: #7fab21;
+    border: #7fab21 solid 10px;
+    border-radius: 15px 15px 15px 15px;
+    color:#FFF;
 }

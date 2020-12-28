@@ -5,11 +5,6 @@
         </div>
 
         <div class="main__totalHD">
-            <p class="main__totalHD-para">Tổng số hóa đơn:
-                <?php
-                    echo count($data["listHoaDon"]);
-                ?>
-            </p>
         </div>
 
         <div class="main__table">
@@ -18,29 +13,28 @@
                     <th>STT</th>
                     <th>Mã hóa đơn</th>
                     <th>Mã khách hàng</th>
-                    <th>Số sản phẩm đã mua</th>
                     <th>Tổng tiền</th>
                     <th>Thêm</th>
                 </tr>
                 <?php
                     $str="";
-                    $arr1=$data["listHoaDon"];
-                    for ($i=0;$i<count($arr1);$i++)
+                    
+                    $index=1;
+                    while($row=mysqli_fetch_array($data["listHoaDon"]))
                     {
-                        $index=$i+1;
                         $row="
                             <tr>
                                 <td>{$index}</td>
-                                <td>{$arr1[$i]["mahd"]}</td>
-                                <td>{$arr1[$i]["makh"]} {$arr1[$i]["isDelete"]}</td>
-                                <td>{$arr1[$i]["Số sp đã mua"]}</td>
-                                <td>{$arr1[$i]["tien"]} đ</td>
+                                <td>{$row["mahd"]}</td>
+                                <td>{$row["makh"]}</td>
+                                <td>{$row["tien"]} đ</td>
                                 <td>
-                                    <a href='http://localhost/DoAn/listhd/cthd/{$arr1[$i]["mahd"]}'>Xem chi tiết</a>
+                                    <a href='http://localhost/DoAn/listhd/cthdkh/{$row["mahd"]}'>Xem chi tiết</a>
                                 </td>
                             </tr>
                         ";
                         $str.=$row;
+                        $index++;
                     }
                     echo $str;
                 ?>
@@ -126,7 +120,7 @@
 <script>
     // nếu ở trang danh sách thì k hiển thị CTHD
     var url=window.location.href;
-    if (url=="http://localhost/Doan/ListHD/danhsach")
+    if (url=="http://localhost/DoAn/Listhd/hoadonkh")
     {
         document.querySelector(".main__wrapper").style.display="block";
         document.querySelector(".main__table").align="center";

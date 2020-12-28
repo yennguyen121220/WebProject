@@ -3,7 +3,8 @@
         public $TaiKhoanModel;
         function __construct(){
             $this->TaiKhoanModel=$this->model("TaiKhoanModel");
-            
+
+            $tendangnhap=$_SESSION["username"];
             // check password cũ đã nhập đúng hay chưa
             // nếu chưa sẽ ra thông báo sai mk cũ, nếu đúng sẽ update thành công
             if (isset($_POST["UpdatePassword"])) {
@@ -11,7 +12,8 @@
                 $password=$_POST['newpassword'];
                 $oldPassword=$_POST['oldpassword'];
 
-                $checkOldPassword=$this->TaiKhoanModel->Login($username, $oldPassword);
+
+                $checkOldPassword=$this->TaiKhoanModel->Login($username, $oldPassword)->num_rows;
                 if ($checkOldPassword==1)
                 {
                     // update mk admin/kh nhập
@@ -23,37 +25,28 @@
                     $kq="Nhập mật khẩu cũ không đúng";
                 }
                 
+                
+
                 // hiển thị lên đã update thành công hay chưa
                 $this->view("masterLayout2", [
                     "Page"=>"suakh",
-                    "Kq"=>$kq
+                    "Kq"=>$kq,
+                    "GetKH"=>$this->TaiKhoanModel->GetKH($tendangnhap)
                 ]);
             }
             // trang hiển thị ban đầu chưa nhấn submit
             else 
             {
+
+                
+            
                 $this->view("masterLayout2", [
-                    "Page"=> "suakh"
+                    "Page"=> "suakh",
+                    "GetKH"=>$this->TaiKhoanModel->GetKH($tendangnhap)
+                    // "GetKH" =>$->GetKH($tendangnhap)
                 ]);
             }
         }
 
-        // function XuLySua(){
-        //     // lấy data mk đã update mà admin/kh nhập
-        //     if (isset($_POST["UpdatePassword"])) {
-        //         $username=$_POST['username'];
-        //         $password=$_POST['newpassword'];
-        //     }
-
-        //     // update mk admin/kh nhập
-        //     $kq=$this->TaiKhoanModel->Update($username, $password);
-            
-        //     // hiển thị lên đã update thành công hay chưa
-        //     $this->view("masterLayout2", [
-        //         "Page"=>"suakh",
-        //         "Kq"=>$kq
-        //     ]);
-          
-        // }
     }
 ?>

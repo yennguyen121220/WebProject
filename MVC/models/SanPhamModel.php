@@ -7,21 +7,16 @@ class SanPhamModel extends DB{
         $qr="SELECT * FROM sanpham WHERE loai='1'";
         return mysqli_query($this->con,$qr);
     }
-    public function TuiGT(){
-        $qr="SELECT * FROM sanpham WHERE loai='1' AND masp BETWEEN 1 and 2";
-        return mysqli_query($this->con,$qr);
-    }
-
+    
+    
 
     //giay, dep 2
     public function GetGiay(){
         $qr="SELECT * FROM sanpham WHERE loai='2'";
         return mysqli_query($this->con,$qr);
     }
-    public function GiayGT(){
-        $qr="SELECT * FROM sanpham WHERE loai='2' AND masp BETWEEN 30 and 31";
-        return mysqli_query($this->con,$qr);
-    }
+   
+    
 
     //ao 3
     public function GetAo(){
@@ -29,10 +24,8 @@ class SanPhamModel extends DB{
         return mysqli_query($this->con,$qr);
         
     }
-    public function AoGT(){
-        $qr="SELECT * FROM sanpham WHERE loai='3' AND masp BETWEEN 30 and 31";
-        return mysqli_query($this->con,$qr);
-    }
+    
+    
 
     //quan 4
     public function GetQuan(){
@@ -40,10 +33,7 @@ class SanPhamModel extends DB{
         return mysqli_query($this->con,$qr);
         
     }
-    public function QuanGT(){
-        $qr="SELECT * FROM sanpham WHERE loai='4' AND masp BETWEEN 80 and 81";
-        return mysqli_query($this->con,$qr);
-    }
+   
 
 
     //yem 5
@@ -51,10 +41,7 @@ class SanPhamModel extends DB{
         $qr="SELECT * FROM sanpham WHERE loai='5'";
         return mysqli_query($this->con,$qr);
     }
-    public function YemGT(){
-        $qr="SELECT * FROM sanpham WHERE loai='5' AND masp BETWEEN 110 and 111";
-        return mysqli_query($this->con,$qr);
-    }
+   
 
 
     //Chan vay 6
@@ -62,10 +49,7 @@ class SanPhamModel extends DB{
         $qr="SELECT * FROM sanpham WHERE loai='6'";
         return mysqli_query($this->con,$qr);
     }
-    public function ChanVayGT(){
-        $qr="SELECT * FROM sanpham WHERE loai='6' AND masp BETWEEN 125 and 126";
-        return mysqli_query($this->con,$qr); 
-    }
+    
 
     
     //vay 7
@@ -73,14 +57,16 @@ class SanPhamModel extends DB{
         $qr="SELECT * FROM sanpham WHERE loai='7'";
         return mysqli_query($this->con,$qr);
     }
-    public function VayGT(){
-        $qr="SELECT * FROM sanpham WHERE loai='7' AND masp BETWEEN 150 and 151";
+   
+    
+    //Gioi thieu san pham moi
+    public function GioiThieu(){
+        $qr="SELECT * FROM sanpham ORDER BY masp DESC LIMIT 8";
         return mysqli_query($this->con,$qr);
     }
 
 
-
-    //them sp
+     //them sp
     // public function Insert($loai,)
     public function Insert($loai,$tensp, $gia,$hinhanh,$mota){
         $qr="INSERT INTO sanpham (loai,tensp,gia,hinhanh,mota) VALUES
@@ -124,6 +110,19 @@ class SanPhamModel extends DB{
         $this->con->query($create_FK);
         
         return $kq;
+    }
+
+
+    //Tim kiem
+    public function search($name){
+        $sql="SELECT * FROM sanpham WHERE tensp LIKE '%$name%'";
+        return mysqli_query($this->con,$sql);
+    }
+
+
+    public function ChiTietSP($masp){
+        $qr="SELECT * FROM sanpham WHERE masp='$masp'";
+        return mysqli_query($this->con,$qr);
     }
 }
 ?>

@@ -78,13 +78,17 @@ body{
 	background:#FFF url(http://localhost/DoAn/public/images/iconsearch.png) no-repeat 1px;
 	text-indent:35px;
 }
-#content #menu_top #top_left #find input[type=button]{
+#content #menu_top #top_left #find a#btnFind {
 	width:100px;
 	height:40px;
+	outline: none;
 	background:#7fab21;
+	text-decoration: none;
 	color:#FFF;
-	border: 0px;
+	border-radius: 15px 15px 15px 15px;
+	border: #7fab21 solid 12px;
 }
+
 #content #menu_top #top_right{
 	width:175px;
 	float:left;
@@ -178,7 +182,7 @@ body{
 	text-decoration:none;
 	display:block;
 	height:20px;
-	color:#7fab21;
+	color:#F96;
 	border-left:1px solid #7fab21;
 	padding:0px 10px 0px 10px;/*giãn cách theo 4 chiều top left bottom right*/
 } 
@@ -225,11 +229,11 @@ body{
 
 
 
-#content #main #menu_left .main_menu ul li ul.submenu{
+ul.submenu{
 	margin:0px 0px 0px 50px;
 	padding:0px;
 	display:none;
-	position:absolute;
+	/* position:absolute; */
 }
 #content #main #menu_left .main_menu li:hover .submenu{
 	display:block;
@@ -427,6 +431,7 @@ body{
 	font-size:30px;
 	/* font-family:"Comic Sans MS", cursive; */
 }
+
 #content #main #hotdeals .sanpham h3 a{
 	border-bottom:#7fab21;
 	color:#7fab21;
@@ -456,6 +461,21 @@ body{
 	background:#FC6;
 	color:#000;
 }
+
+a.chonmua {
+    border-radius: 15px 15px 15px 15px;
+    text-decoration: none;
+    width: 100px;
+    height: 40px;
+    background: #7fab21;
+    color: #FFF;
+    border: 1px solid #000;
+}
+
+    a.chonmua:hover {
+        background: #FC6;
+        color: #000;
+    }
 
 		/*footer*/
 footer {

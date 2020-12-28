@@ -1,6 +1,7 @@
 <?php
     // echo $_GET['url'];
     session_start();
+    ob_start();
     require_once "./MVC/Bridge.php";
     $myApp=new App();
 ?>
