@@ -8,7 +8,8 @@ class Yem extends Controller{
         $sp=$this->model("SanPhamModel");
         $this->view("masterlayout",[
             "Page" =>"yem",
-            "Yem" =>$sp->GetYem()
+            "Yem" =>$sp->GetYem(),
+            "YemGT" =>$sp->YemGT()
         ]);
     }
 } 

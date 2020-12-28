@@ -5,7 +5,8 @@ class Quan extends Controller{
         $sp=$this->model("SanPhamModel");
         $this->view("masterlayout",[
             "Page" =>"quan",
-            "Quan" =>$sp->GetQuan()
+            "Quan" =>$sp->GetQuan(),
+            "QuanGT" =>$sp->QuanGT()
         ]);
     }
 } 

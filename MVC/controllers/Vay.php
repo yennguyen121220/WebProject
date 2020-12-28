@@ -9,7 +9,8 @@ class Vay extends Controller{
         $sp=$this->model("SanPhamModel");
         $this->view("masterlayout",[
             "Page" =>"vay",
-            "Vay" =>$sp->GetVay()
+            "Vay" =>$sp->GetVay(),
+            "VayGT" =>$sp->VayGT()
         ]);
     }
 } 

@@ -43,9 +43,9 @@
                 if (isset($data['Kq']))
                 {
                     if ($data['Kq'])
-                        echo "Xóa thành công";
+                        echo "Sửa thành công";
                     else 
-                        echo "Xóa thất bại";
+                        echo "Sửa thất bại";
                 }
             ?>
         </h1>

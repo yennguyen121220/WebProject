@@ -1,16 +1,21 @@
 <?php
 class Home extends Controller{
-    // function SayHi($masp){
+    // function SayHi(){
     //     // $sp =$this->model("TuiModel");
     //     // echo $sp->GetTui();
-    //     echo $masp;
     //     echo "Yenzt";
     // }
     function __construct(){
         $sp=$this->model("SanPhamModel");
         $this->view("masterlayout",[
             "Page" =>"home",
-            "GioiThieu"=>$sp->GioiThieu()
+            "GiayGT" =>$sp->GiayGT(),
+            "TuiGT"=>$sp->TuiGT(),
+            "AoGT"=>$sp->AoGT(),
+            "ChanVayGT"=>$sp->ChanVayGT(),
+            "QuanGT"=>$sp->QuanGT(),
+            "VayGT"=>$sp->VayGT(),
+            "YemGT"=>$sp->YemGT()
         ]);
     }
 } 

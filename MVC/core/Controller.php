@@ -1,6 +1,5 @@
 <?php
 class Controller{
-
     public function model($model){//goi model ra xu li
 
         // dang ra se kiem tra truoc khi return phai kiem tra duong
@@ -11,6 +10,7 @@ class Controller{
     }
     public function view($view,$data=[]){
         require_once "./MVC/views/".$view.".php";
+
     }
 }
 ?>

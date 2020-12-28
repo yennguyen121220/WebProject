@@ -1,4 +1,3 @@
-
 <div class="main__form" align="center">
     <h1 class="main__heading-form">FORM ĐĂNG NHẬP</h1>
     <div class="main__form-container">
@@ -52,5 +51,15 @@
                 <a href="./DangKy" class="form__for-new-user-link">Đăng ký</a>
             </div>
         </form>
+        <h1>
+            <?php
+                if(isset($_POST["login"])&&$_POST["login"]=="Đăng Nhập"){
+                    //kiem tra da co du lieu data['tentaikhoan']!=='' ->thanh cong
+
+                   
+                }
+            ?>
+        </h1>
     </div>
+    
 </div>

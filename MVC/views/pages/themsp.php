@@ -36,12 +36,30 @@
         </form>
         <h1>
             <?php
-                if(isset($_POST["register"])&&$_POST["register"]=="Thêm sản phẩm"){
-                    echo "Thêm thành công";
+                // if(isset($_POST["register"])&&$_POST["register"]=="Thêm sản phẩm"){
+                //     echo "Thêm thành công";
+                // }
+                if (isset($data["Kq"]))
+                {
+                    if ($data["Kq"])
+                        echo "Thêm thành công";
+                    else 
+                        echo "Thêm thất bại";
                 }
+                    
             ?>
         </h1>
     </div>
 </div>
+
+<script>
+    var url=window.location.href;
+    if(url=="http://localhost/DoAn/ThemSP/XuLyThem")
+    {
+        setTimeout(function() {
+            window.location="http://localhost/DoAn/ThemSP";
+        }, 20);
+    }
+</script>
 
 

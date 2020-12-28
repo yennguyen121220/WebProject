@@ -21,7 +21,8 @@ class Giay extends Controller{
         $sp=$this->model("SanPhamModel");
         $this->view("masterlayout",[
             "Page" =>"giay",
-            "Giay" =>$sp->GetGiay()
+            "Giay" =>$sp->GetGiay(),
+            "GiayGT"=>$sp->GiayGT()
         ]);
     }
 } 

@@ -20,16 +20,10 @@
                 $phoneNum=$_POST["telNumber"];
                 $username=$_POST["username"];
                 $password=$_POST["password"];
-                if(isset($_POST["role"])){
-                    $role=$_POST["role"];
-                }
-                else{
-                    $role=0;
-                }
             }
 
             //2. insert data bang user
-            $kq=$this->TaiKhoanModel->Insert($username, $password,$name,$address,$phoneNum,$role);
+            $kq=$this->TaiKhoanModel->Insert($username, $password,$name,$address,$phoneNum);
            
             //3. hien thi thon bao successed/failed
             $this->view("masterLayout2",[
