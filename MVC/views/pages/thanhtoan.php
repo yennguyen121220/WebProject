@@ -9,13 +9,16 @@
           <hr class="mt-1">
         </div>
         <div class="col-12">
-
+        <?php
+        while($row=mysqli_fetch_array($data["KH"]))
+		        {
+        ?>
           <div class="row mt-3 mx-4">
             <div class="col-12">
               <label class="order-form-label">Họ tên</label>
             </div>
             <div class="col-12">
-              <input class="order-form-input" placeholder="Họ tên">
+              <input class="order-form-input" value="<?php echo $row["hoten"] ?>"  >
             </div>
           </div>
 
@@ -25,7 +28,7 @@
               <label class="order-form-label">Địa chỉ</label>
             </div>
             <div class="col-12">
-              <input class="order-form-input" placeholder="Nhập địa chỉ">
+              <input class="order-form-input" value="<?php echo $row["diachi"] ?>" >
             </div>
           </div>
 
@@ -34,16 +37,16 @@
               <label class="order-form-label">Số điện thoại</label>
             </div>
             <div class="col-12">
-              <input class="order-form-input" placeholder="Số điện thoại">
+              <input class="order-form-input" value="<?php echo $row["sdt"] ?>">
             </div>
           </div>
-
+        <?php } ?>
           <div class="row mt-3 mx-4">
             <div class="col-12">
               <label class="order-form-label">Tổng tiền thanh toán</label>
             </div>
             <div class="col-12">
-              <input class="order-form-input" placeholder="Tổng tiền">
+              <input class="order-form-input" value="<?php echo $_SESSION["tongtien"]; ?>">
             </div>
           </div>
 

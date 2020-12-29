@@ -27,6 +27,7 @@
         </thead> 
         <tbody>
                 <?php
+                        $tongtien=0;
                         if (isset($_SESSION['items']))
                         {
                                 $arr=$_SESSION['items'];
@@ -53,9 +54,11 @@
                                                         </button>
                                                 </td> 
                                         </tr>";
+                                        $tongtien +=$arr[$i]["gia"]*(int)$_SESSION['soluong'];
                                 }
                                 unset($_SESSION['itemSolds']);
                         }
+                        $_SESSION["tongtien"] = $tongtien;
                 ?>
         </tbody>
         <tfoot> 
