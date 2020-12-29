@@ -3,12 +3,26 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo $data["Page"] ?> - Jolie Clothing</title>
-<link href="http://localhost/DoAn/public/css/product.css" type="text/css" rel="stylesheet" />
+<?php
+	if ($data["Page"]=="thanhtoan")
+	{
+		echo "<link href='http://localhost/DoAn/public/css/giohang.css' type='text/css' rel='stylesheet' />";
+		echo "<link href='http://localhost/DoAn/public/css/product.css' type='text/css' rel='stylesheet' />";
+		echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
+		echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>";
+		echo "<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>";
+		echo "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>";
+	}
+	else 
+	{
+		echo "<link href='http://localhost/DoAn/public/css/product.css' type='text/css' rel='stylesheet' />";
+	}
+?>
+
 <link href="http://localhost/DoAn/public/css/fontawesome-free-5.14.0/css/all.min.css" type="text/css" rel="stylesheet" />
 
-<script>
-	
-</script>
+<script src="./jquery-3.5.1.min.js"></script>
+<script src="./public/js/ajaxJS.js"></script>
 
 </head>
 
@@ -48,7 +62,7 @@
                     </div>
                     
                     <div id="left">
-                        <h3><a href="http://localhost/DoAn/GioHang">Giỏ hàng</a></h3>
+                        <h3><a href="http://localhost/DoAn/giohang/index">Giỏ hàng</a></h3>
                     </div>
                 </div>
                 <div id="right_bottom"><h2><a href="#">Contact us</a></h2></div>

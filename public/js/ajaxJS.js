@@ -47,6 +47,8 @@ $(document).ready(function() {
             }
         })
     })
+
+    // ajax chọn username
     $("#usernameKH").change(function(e) {
         $.ajax({
             url: "./ajaxKH.php",
@@ -61,4 +63,27 @@ $(document).ready(function() {
             }
         })
     })
+
+    // ajax chọn đặt mua hàng
+    var btnBuys=$(".btn-chonmua").toArray();
+    var countCart=0;
+    for (var i=0;i<btnBuys.length;i++)
+    {
+        $(btnBuys[i]).click(function(e) {
+            e.target.setAttribute("disabled", "true");
+            countCart++;
+            var objSP={
+                'linkImg': e.target.parentNode.parentNode.querySelector("img").getAttribute("src"),
+                'tensp':  e.target.parentNode.querySelector("label span").innerText,
+                'gia': +e.target.parentNode.querySelector("span#gia").innerText
+            };
+
+            $.get("./ajaxGH.php", {
+                item: objSP,
+                countCart: countCart
+            }, function(data) {
+                // xử lý session k xử lý data
+            })
+        })
+    }
 })

@@ -13,7 +13,6 @@ class GioHang extends Controller{
     public function __construct(){
         $this->model('GioHangModel');
         $this->giohangModel=new GioHangModel;
-
     }
 
     public function index(){

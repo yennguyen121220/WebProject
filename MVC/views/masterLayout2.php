@@ -10,7 +10,7 @@
 	<?php
         echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/".$data["Page"].".css'>";
     ?>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="./jquery-3.5.1.min.js"></script>
 	
 	<?php
 		if ($data["Page"]=="suakh" || $data["Page"]=="xoakh")
@@ -85,7 +85,7 @@
                             </ul>
                         </div>
                         <div id="left">
-                            <h3><a href="http://localhost/DoAn/GioHang">Giỏ hàng</a></h3>
+                            <h3><a href="http://localhost/DoAn/giohang/index">Giỏ hàng</a></h3>
                         </div>
                     </div>
                     <div id="right_bottom"><h2><a href="#">Contact us</a></h2></div>
