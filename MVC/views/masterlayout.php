@@ -6,6 +6,10 @@
 <link href="http://localhost/DoAn/public/css/product.css" type="text/css" rel="stylesheet" />
 <link href="http://localhost/DoAn/public/css/fontawesome-free-5.14.0/css/all.min.css" type="text/css" rel="stylesheet" />
 
+<script>
+	
+</script>
+
 </head>
 
 <body>
@@ -18,7 +22,7 @@
             <div id="top_left">
                 <form method="POST" action="http://localhost/DoAn/TimKiem">
 					<div id="find">
-						<input type="text" id="search_name" name="search_name" placeholder="Nhập sản phẩm cần tìm" />
+						<input type="text" id="search_name" name="search_name" placeholder="<?php if(isset($_SESSION["timkiem"])){ echo $_SESSION["timkiem"]; } else{ echo "Nhập sản phẩm cần tìm"; } ?>" />
 						<a id="btnFind" name="timkiem">Tìm kiếm</a>
 					</div>
 				</form>
@@ -92,12 +96,14 @@
 						<li><a href="./Vay" title="Váy">Váy</a></li>
 						<?php
 							
-							if( isset($_SESSION["quyen"]) ){
+							if( isset($_SESSION["quyen"])){
 								echo "<li><a>Cài đặt tài khoản</a>";
 								echo "<ul class='submenu'>";
 								echo "";
-								echo "<li><a href='./XoaKH'>Xóa tài khoản</a></li>";
 								echo "<li><a href='./SuaKH'>Sửa tài khoản</a></li>";
+								if($_SESSION["quyen"]==0){
+									echo "<li><a href='http://localhost/DoAn/Listhd/hoadonkh'>Hóa đơn mua hàng</a></li>";
+								}
 								echo "</ul>";
 								echo "</li> ";
 							}
@@ -109,7 +115,6 @@
 								echo "<li><a href='./XoaSP'>Xóa sản phẩm</a></li>";
 								echo "<li><a href='./SuaSP'>Cập nhật sản phẩm</a></li>";
 								echo "<li><a href='./XoaKH'>Xóa khách hàng</a></li>";
-								echo "<li><a href='./SuaKH'>Cập nhật khách hàng</a></li>";
 								echo "<li><a href='http://localhost/Doan/ListHD/danhsach'>Danh sách hóa đơn</a></li>";
 								echo "</ul>";
 								echo "</li> ";

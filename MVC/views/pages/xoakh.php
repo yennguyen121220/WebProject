@@ -7,7 +7,7 @@
                 <select name="usernameKH" id="usernameKH">
                     <option selected value="" disabled>Chọn username khách hàng cần xóa</option>
                     <?php
-                        $conn=new mysqli('localhost', 'root', '', 'dbwebproject');
+                        $conn=new mysqli('localhost', 'root', '', 'dbforwebproject');
                         if (!$conn)
                         {
                             die("Connect failed: ".mysqli_connect_error());

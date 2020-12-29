@@ -1,12 +1,30 @@
 <?php
+ 
     class SuaSp extends Controller{
         public $SanPhamModel;
         function __construct(){
-            $this->SanPhamModel=$this->model("SanPhamModel");
-            $this->view("masterLayout2", [
-                "Page"=> "suasp"
-            ]);
+            if(isset($_SESSION["masp"])){
+                $masp = $_SESSION["masp"];
+                $this->SanPhamModel=$this->model("SanPhamModel");
+                $this->view("masterLayout2", [
+                    "Page"=> "suasp",
+                    "CT"=> $this->SanPhamModel->ChiTietSP($masp)
+                ]);
+            }
+            else{
+                $this->SanPhamModel=$this->model("SanPhamModel");
+                $this->view("masterLayout2", [
+                    "Page"=> "suasp"
+                ]);
+            }
+            if(isset($_SESSION["masp"])){
+                unset($_SESSION["masp"]);
+            }
         }
+
+        // function suasp(){
+        //    
+        // }
 
         function XuLySua(){
             // lấy data sp đã update mà admin nhập
@@ -24,6 +42,7 @@
             // update sp admin nhập
             $kq=$this->SanPhamModel->Update($masp, $loai, $tensp, $gia, $hinhanh, $mota);
 
+            
             // hiển thị lên đã update thành công hay chưa
             $this->view("masterLayout2", [
                 "Page"=>"suasp",

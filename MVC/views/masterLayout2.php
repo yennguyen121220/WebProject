@@ -15,9 +15,10 @@
 	<?php
 		if ($data["Page"]=="suakh" || $data["Page"]=="xoakh")
 		{?>
-			<script src="./public/js/ajaxKH.js"></script>
+			<script src="./public/js/ajaxJS.js"></script>
 		<?php }
 	?>
+
 	<?php
 		if ($data["Page"]=="suasp" || $data["Page"]=="xoasp")
 		{?>
@@ -36,11 +37,14 @@
 				echo "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>";
 				echo "<script src='js/jquery-1.11.1.min.js'></script>";
 			}
-			if($data["Page"]=="listhd"){
-				echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/listhd.css' />";
-			}
 			else{
-				echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/dangky.css' />";
+				if($data["Page"]=="listhd"||$data["Page"]=="listhdkh"){
+					echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/listhd.css' />";
+				}
+				else{
+					
+					echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/dangky.css' />";
+				}
 			}
 		}
 		
@@ -56,7 +60,7 @@
                 <div id="top_left">
 					<form method="POST" action="http://localhost/DoAn/TimKiem">
 						<div id="find">
-							<input type="text" id="search_name" name="search_name" placeholder="Nhập sản phẩm cần tìm" />
+							<input type="text" id="search_name" name="search_name" placeholder="<?php if(isset($_SESSION["timkiem"])){ echo $_SESSION["timkiem"]; } else{ echo "Nhập sản phẩm cần tìm"; } ?>" />
 							<a id="btnFind" name="timkiem">Tìm kiếm</a>
 						</div>
 					</form>

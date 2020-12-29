@@ -22,6 +22,12 @@ class TaiKhoanModel extends DB{
         return mysqli_query($this->con,$qr);
     }
 
+    //lay ra  thong tin khach hang
+    function GetKH($tendangnhap){
+        $qr="SELECT * FROM taikhoan WHERE tendangnhap='$tendangnhap'";
+        return mysqli_query($this->con,$qr);
+    }
+
     //sua tai khoan
     function Update($username, $password){
         $qr="UPDATE taikhoan SET matkhau='$password' WHERE tendangnhap='$username'";

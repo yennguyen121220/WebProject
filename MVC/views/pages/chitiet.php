@@ -7,8 +7,8 @@
     <?php
         while($row=mysqli_fetch_array($data["CT"]))
 		{
-
-
+            
+            $_SESSION["masp"]=$row["masp"];
             echo '<div class="data_left">';
             echo   ' <img src="http://localhost/DoAn/public/images/'.$row["hinhanh"].'" alt="hinh ảnh">';
             echo '</div>';
@@ -47,10 +47,10 @@
     echo                            '<a class="cn" href="http://localhost/DoAn/GioHang">Giỏ Hàng</a>';
     echo                       ' </td>';
     
-                            if ($_SESSION["quyen"] != null && ((int)$_SESSION["quyen"]) == 1)
+                            if (isset($_SESSION["quyen"]) && ((int)$_SESSION["quyen"]) == 1)
                             {
     echo                            '<td>';
-    echo                                '<a class="cn" href="/SanPham/SuaSP">Sửa</a>';
+    echo                                '<a class="cn" href="http://localhost/DoAn/SuaSP">Sửa</a>';
     echo                           ' </td>';
     echo                           ' <td>';
     echo                               ' <input type="submit" value="Xóa" class="btn btn-default" />';
@@ -59,11 +59,8 @@
     echo                    '</tr>';
     echo                '</table>';
             echo        "</div>";
-
-        
             echo '</div>';
         }
     ?>
-        
     </div>
 </div>

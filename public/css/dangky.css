@@ -304,12 +304,12 @@ input[name="check"] + span a {
 input[name="check"] + span a:hover {
 	color: #1a471a;
 }
-
 .input__group-submit-btn {
 	margin-bottom: 25px;
+    margin-top:40px;
 }
 
-input[name="register"]{
+input[name="register"], input[name="UpdatePassword"], input[name="DeleteSP"], input[name="UpdateSP"], input[name="DeleteKH"]{
 	width: 200px;
 	background-color: #0e770e;
 	color: #eee;
@@ -322,7 +322,7 @@ input[name="register"]{
 	transition: all 0.3s ease;
 }
 
-input[name="register"]:hover {
+input[name="register"]:hover, input[name="UpdatePassword"]:hover, input[name="DeleteSP"]:hover, input[name="UpdateSP"]:hover,input[name="DeleteKH"]:hover {
 	color: #3bf73b;
 	background-color: #eee;
 	border-color: #3bf73b;

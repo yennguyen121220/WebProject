@@ -9,6 +9,7 @@ class DangNhap extends Controller
         
     }
 
+    
     function XuLyDangNhap(){
         //1. get data khach hang nhap
 
