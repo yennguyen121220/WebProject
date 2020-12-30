@@ -47,6 +47,7 @@ $(document).ready(function() {
             }
         })
     })
+
     $("#usernameKH").change(function(e) {
         $.ajax({
             url: "./ajaxKH.php",
@@ -61,4 +62,37 @@ $(document).ready(function() {
             }
         })
     })
+    
+    
+    // ajax chọn đặt mua hàng
+    var btnBuys=$(".btn-chonmua").toArray();
+    var countCart=0;
+    for (var i=0;i<btnBuys.length;i++)
+    {
+        $(btnBuys[i]).click(function(e) {
+            e.target.setAttribute("disabled", "true");
+            e.target.setAttribute("style", "cursor: auto; background-color: #FC6; color: #000;");
+            countCart++;
+            var masp=e.target.parentNode.querySelector('a.chonmua').getAttribute('href');
+            var arrLink=masp.split('/');
+            masp=arrLink[arrLink.length-1];
+            var objSP={
+                'linkImg': e.target.parentNode.parentNode.querySelector("img").getAttribute("src"),
+                'tensp':  e.target.parentNode.querySelector("label span").innerText,
+                'gia': +e.target.parentNode.querySelector("span#gia").innerText,
+                'soluong':1,
+                'masp': masp
+            };
+
+            $.get("./ajaxGH.php", {
+                item: objSP,
+                countCart: countCart
+            }, function(data) {
+                // xử lý session k xử lý data
+                if (data=="nouser") {
+                    window.location="http://localhost/DoAn/DangNhap";
+                }
+            })
+        })
+    }
 })

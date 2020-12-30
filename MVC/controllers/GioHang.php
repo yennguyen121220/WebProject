@@ -13,15 +13,19 @@ class GioHang extends Controller{
     public function __construct(){
         $this->model('GioHangModel');
         $this->giohangModel=new GioHangModel;
-
     }
 
     public function index(){
-        $items=$this->model('GioHangModel');
-         $this->view("masterlayout2",[
-            "Page" =>"giohang",
-            'items'=>$items
-        ]);
+        if(isset($_SESSION["username"])){
+            $items=$this->model('GioHangModel');
+            $this->view("masterlayout2",[
+                "Page" =>"giohang",
+                'items'=>$items
+            ]);
+        }
+        else{
+            header("Location: http://localhost/DoAn/DangNhap");
+        }
     }
 
     

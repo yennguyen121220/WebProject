@@ -169,6 +169,21 @@ body{
 	color:#7fab21;
 }
 
+.btn-chonmua {
+	background-color: #7fab21;
+	border-radius: 25px;
+	border: 1px solid #000;
+	color: #fff;
+	cursor: pointer;
+	padding: 2.5px 5px;
+	margin-right: 5px;
+}
+
+.btn-chonmua:hover {
+	background-color: #FC6;
+	color: #000;
+}
+
 /*--------------*/
 #content #menu_top #duongdan .dd ul{
 	margin:0px;
@@ -465,11 +480,13 @@ ul.submenu{
 a.chonmua {
     border-radius: 15px 15px 15px 15px;
     text-decoration: none;
-    width: 100px;
-    height: 40px;
+    /* width: 100px; */
+	/* height: 40px; */
+	padding: 2.5px 5px;
     background: #7fab21;
     color: #FFF;
-    border: 1px solid #000;
+	border: 1px solid #000;
+	font-size: 0.9rem;
 }
 
     a.chonmua:hover {

@@ -21,6 +21,7 @@
             </div>
             <div class="input__group input__group--margin-bottom-less">
                 <input type="password" name="retype_password" placeholder="Nhập lại mật khẩu" required>
+                <p class="confirm-message"></p>
             </div>
             <div class="input__group">
                 <?php
@@ -67,3 +68,37 @@
 </div>
 
 
+
+<script>
+    var confirmInput=document.querySelector('input[name="retype_password"]');
+    //var confirmOldInput=document.querySelector('input[name="oldpassword"]');
+    confirmInput.oninput=function(e) {
+        var password=document.querySelector('input[name="password"]').value;
+        var confirmPassword=e.target.value;
+        if (confirmPassword===password)
+        {
+            document.querySelector('p.confirm-message').innerText="Xác thực đúng";
+            document.querySelector('input[name="register"]').setAttribute("type", "submit");
+        }
+        else 
+        {
+            document.querySelector('p.confirm-message').innerText="Xác thực sai";
+            document.querySelector('input[name="register"]').setAttribute("type", "button");
+        }
+        document.querySelector('p.confirm-message').style.display="block";
+    }
+    // var url=window.location.href;
+    // if(url=="http://localhost/DoAn/SuaKH/XuLySua")
+    // {
+    //     setTimeout(function() {
+    //         window.location="http://localhost/DoAn/SuaKH";
+    //     }, 20);
+    // }
+    var url=window.location.href;
+    if(url=="http://localhost/DoAn/DangKy/XuLyDangKy")
+    {
+        setTimeout(function() {
+            window.location="http://localhost/DoAn/DangNhap";
+        }, 20);
+    }
+</script>

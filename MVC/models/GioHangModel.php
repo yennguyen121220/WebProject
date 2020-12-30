@@ -9,26 +9,26 @@
         public function ThemHoaDon($makh, $tien, $diachi, $sdt, $hoten){
             $qr="INSERT INTO hoadon (makh, tien, diachi, sdt, hoten) 
             VALUES ('$makh', $tien, '$diachi', '$sdt', '$hoten');";
-            $result = false;
-            if(mysqli_query($this->con,$qr))
-            {
-                $result=true;
-            }
-            return json_encode($result);
+            $this->con->query($qr);
+            // $result = false;
+            // if(mysqli_query($this->con,$qr))
+            // {
+            //     $result=true;
+            // }
+            // return json_encode($result);
+        }
+        public function GetMaxMahd(){
+            $qr="SELECT MAX(mahd) FROM hoadon";
+            $kq=$this->con->query($qr);
+            return $kq->fetch_row()[0];
         }
 
-        public function ThemCTHD($masp, $soluong, $thanhtien){
-            $result = mysql_query("SELECT MAX(mahd) FROM hoadon");
-            $row = mysql_fetch_row($result);
-            $mahd = $row[0];
+
+        public function ThemCTHD($mahd, $masp, $soluong, $thanhtien){
+            
             $qr="INSERT INTO cthd (mahd, masp, soluong, thanhtien) 
             VALUES ('$mahd', $masp, '$soluong', '$thanhtien');";
-            $kq = false;
-            if(mysqli_query($this->con,$qr))
-            {
-                $kq=true;
-            }
-            return json_encode($kq);
+            $this->con->query($qr);
         }
     }
 ?>
