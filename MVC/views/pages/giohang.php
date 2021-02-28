@@ -2,11 +2,24 @@
         if (isset($_SESSION['itemSolds']))
         {
                 $arr=$_SESSION['itemSolds'];
+                unset($_SESSION['itemSolds']);
+                unset($_SESSION['soluong']);
                 for ($i=0;$i<count($arr);$i++)
                 {
                         if (isset($_SESSION['items']))
                         {
-                                $_SESSION['items'][count($_SESSION['items'])]=$arr[$i+1];
+                                $ktTrung=FALSE;
+                                for ($j=0;$j<count($_SESSION['items']);$j++) 
+                                {
+                                        if ($arr[$i+1]["masp"] == $_SESSION['items'][$j]["masp"])
+                                        {
+                                                $_SESSION['items'][$j]["soluong"]+=$arr[$i+1]["soluong"];
+                                                $ktTrung=TRUE;
+                                                break;
+                                        }
+                                }
+                                if ($ktTrung==FALSE)
+                                        $_SESSION['items'][count($_SESSION['items'])]=$arr[$i+1];
                         }
                         else 
                         {       
@@ -27,7 +40,7 @@
         </thead> 
         <tbody>
                 <?php
-                        $tongtien=0;
+                        // $tongtien=0;
                         if (isset($_SESSION['items']))
                         {
                                 $arr=$_SESSION['items'];
@@ -36,11 +49,14 @@
                                         echo "<tr> 
                                                 <td data-th='Product'> 
                                                         <div class='row'> 
-                                                                <div class='col-sm-2 hidden-xs'><img src=".$arr[$i]["linkImg"]." alt='Sản phẩm 1' class='img-responsive' width='100'>
+                                                                <div class='col-sm-2 hidden-xs'>
+                                                                        <a href='http://localhost/DoAn/ChiTietSP/ChiTiet/{$arr[$i]["masp"]}'><img src=".$arr[$i]["linkImg"]." alt='Sản phẩm 1' class='img-responsive' width='100'></a>
                                                                 </div> 
 
                                                                 <div class='col-sm-10'> 
-                                                                        <h4 class='nomargin'>".$arr[$i]["tensp"]."</h4> 
+                                                                        <h4 class='nomargin item'> 
+                                                                                <a href='http://localhost/DoAn/ChiTietSP/ChiTiet/{$arr[$i]["masp"]}' class='item__link'>".$arr[$i]["tensp"]."</a>
+                                                                        </h4> 
                                                                 </div> 
                                                         </div> 
                                                 </td> 
@@ -48,18 +64,15 @@
                                                 <td data-th='Quantity'><input class='form-control text-center numberSP' value='".$arr[$i]["soluong"]."' min='1' type='number'>
                                                 </td> 
                                                 <td class='actions'>
-                                                        <button class='btn btn-info btn-sm'><i class='fa fa-edit'></i>
-                                                        </button> 
-                                                        <button class='btn btn-danger btn-sm'><i class='fa fa-trash-o'></i>
-                                                        </button>
+                                                        <button class='btn btn-danger btn-sm' id='index{$i}'> Xóa </button>
                                                 </td> 
                                         </tr>";
 
-                                        $tongtien += (int)$arr[$i]["gia"]* (int)$arr[$i]["soluong"];
-                                }
-                                unset($_SESSION['itemSolds']);
+                                        // $tongtien += (int)$arr[$i]["gia"] * (int)$arr[$i]["soluong"];
+                                }  
                         }
-                        $_SESSION["tongtien"] = $tongtien;
+
+                        // $_SESSION["tongtien"] = $tongtien;
                 ?>
         </tbody>
         <tfoot> 
@@ -73,10 +86,38 @@
                         </td> 
                         <td colspan="2" class="hidden-xs"> </td> 
                         <td>
-                                <a href="http://localhost/DoAn/Thanhtoan" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a>
+                                <button class="payment"> Thanh toán <i class="fa fa-angle-right"></i> </button>
                         </td> 
                 </tr> 
         </tfoot> 
 </table>
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 
+<style>
+        a.item__link {
+                color: #666;
+        }
+
+        a.item__link:hover {
+                color: #000;
+                text-decoration: none;
+        }
+
+        .payment {
+                width: 100%;
+                display: block;
+                color: #fff;
+                background-color: #5cb85c;
+                border-color: #4cae4c;
+                border-radius: 4px;
+                padding: 8px 0;
+                border: none;
+                
+        }
+
+        .payment:hover {
+                background-color: #449d44;
+                border-color: #398439;
+        }
+</style>
+
+<script src="http://localhost/DoAn/public/js/giohang.js"></script>

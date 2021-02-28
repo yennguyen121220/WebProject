@@ -8,7 +8,8 @@
     <!-------- nhúng icon ----------->
 	<link rel="stylesheet" type="text/css" href="http://localhost/DoAn/public/css/fontawesome-free-5.14.0/css/all.min.css">
 	<?php
-        echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/".$data["Page"].".css'>";
+		if ($data["Page"]!="chitiet")
+        	echo "<link rel='stylesheet' href='http://localhost/DoAn/public/css/".$data["Page"].".css'>";
     ?>
 	<script src="./jquery-3.5.1.min.js"></script>
 	
@@ -85,7 +86,7 @@
                             </ul>
                         </div>
                         <div id="left">
-                            <h3><a href="http://localhost/DoAn/giohang/index">Giỏ hàng</a></h3>
+                            <h3><a href="http://localhost/DoAn/giohang">Giỏ hàng</a></h3>
                         </div>
                     </div>
                     <div id="right_bottom"><h2><a href="#">Contact us</a></h2></div>
@@ -176,17 +177,24 @@
         var icon_hide=document.querySelector(".icon-hide");
         var icon_show=document.querySelector(".icon-show");
         var password=document.querySelector('input[name="password"]');
-        icon_hide.onclick=function(e) {
-            e.target.style.display="none";
-            icon_show.style.display="block";
-            password.setAttribute('type','text');
-        }
-
-        icon_show.onclick=function(e) {
-            e.target.style.display="none";
-            icon_hide.style.display="block";            
-            password.setAttribute('type','password');
-        }
+		if (icon_hide!==undefined)
+		{
+			icon_hide.onclick=function(e) {
+				e.target.style.display="none";
+				icon_show.style.display="block";
+				password.setAttribute('type','text');
+			}
+		}
+        
+		if (icon_show!==undefined) 
+		{
+			icon_show.onclick=function(e) {
+				e.target.style.display="none";
+				icon_hide.style.display="block";            
+				password.setAttribute('type','password');
+			}
+		}	
+        
 	</script>
 	
 	<script src="./public/js/main.js"></script>

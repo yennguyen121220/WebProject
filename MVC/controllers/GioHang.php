@@ -9,18 +9,10 @@ class GioHang extends Controller{
     //     ]);
     // }
 
-    protected $giohangModel;
     public function __construct(){
-        $this->model('GioHangModel');
-        $this->giohangModel=new GioHangModel;
-    }
-
-    public function index(){
         if(isset($_SESSION["username"])){
-            $items=$this->model('GioHangModel');
             $this->view("masterlayout2",[
-                "Page" =>"giohang",
-                'items'=>$items
+                "Page" =>"giohang"
             ]);
         }
         else{
@@ -28,7 +20,6 @@ class GioHang extends Controller{
         }
     }
 
-    
     // protected $productModel;
     // public function __construct(){
     //     $this->model("GioHangModel");

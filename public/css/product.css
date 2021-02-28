@@ -478,21 +478,22 @@ ul.submenu{
 }
 
 a.chonmua {
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 15px;
     text-decoration: none;
     /* width: 100px; */
 	/* height: 40px; */
-	padding: 2.5px 5px;
+	padding: 4px 20px;
     background: #7fab21;
     color: #FFF;
 	border: 1px solid #000;
-	font-size: 0.9rem;
+	font-size: 1rem;
+	font-weight: 600;
 }
 
-    a.chonmua:hover {
-        background: #FC6;
-        color: #000;
-    }
+a.chonmua:hover {
+	background: #f7d287;
+	color: #333;
+}
 
 		/*footer*/
 footer {

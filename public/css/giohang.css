@@ -64,6 +64,12 @@ header #menu_top{
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
 }
 
+h4.item {
+    color: #777;
+}
+
+
+
 .order-form-label {
     margin: 8px 0 0 0;
     font-size: 14px;
@@ -92,3 +98,4 @@ header #menu_top{
 #right_bottom h2 {
     font-size: 1.5rem;
 }
+

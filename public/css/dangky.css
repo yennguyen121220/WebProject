@@ -306,7 +306,7 @@ input[name="check"] + span a:hover {
 }
 .input__group-submit-btn {
 	margin-bottom: 25px;
-    margin-top:40px;
+    margin-top: 20px;
 }
 
 input[name="register"], input[name="UpdatePassword"], input[name="DeleteSP"], input[name="UpdateSP"], input[name="DeleteKH"]{
@@ -490,22 +490,59 @@ footer {
     background: #7fab21;
     text-decoration: none;
     color: #FFF;
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 15px;
     border: #7fab21 solid 12px;
 }
 
 .tbl a {
     text-decoration: none;
-    background: #7fab21;
-    border: #7fab21 solid 10px;
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 15px;
     color:#FFF;
+	padding: 8px 5px;
 }
-.btn-default{
+
+td .updateSP {
+	background-color: #7fab21;
+	font-size: 1.4rem;
+	padding: 8px 5px;
+	border-radius: 15px;
+}
+
+td .updateSP:hover {
+	background-color: #648717;
+}
+
+.btn-default {
 	background-color: #7fab21;
 	border-radius: 15px;
-	border:none;
+	border: none;
 	color: #fff;
 	cursor: pointer;
 	padding: 8px 8px;
 }
+
+.btn-default:hover {
+	background-color: #648717;
+}
+
+.data_right-numberSP {
+	font-family: "Comic Sans MS", cursive;
+	font-size: 1.8rem;
+	position: relative;
+	left: -95px;
+}
+
+.data_right-numberSP label {
+	color: #333;
+}
+
+.input-soluongsp {
+	width: 60px;
+	height: 30px;
+	margin-left: 10px;
+	padding-left: 10px;
+	font-size: 1.4rem;
+	border-radius: 5px;
+	border-color:rgba(65, 125, 65, 0.6)
+}
+

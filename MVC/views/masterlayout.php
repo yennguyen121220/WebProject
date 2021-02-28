@@ -63,7 +63,7 @@
                     </div>
                     
                     <div id="left">
-                        <h3><a href="http://localhost/DoAn/giohang/index">Giỏ hàng</a></h3>
+                        <h3><a href="http://localhost/DoAn/giohang">Giỏ hàng</a></h3>
                     </div>
                 </div>
                 <div id="right_bottom"><h2><a href="#">Contact us</a></h2></div>

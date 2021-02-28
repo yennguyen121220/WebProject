@@ -66,7 +66,7 @@ class SanPhamModel extends DB{
     }
 
 
-     //them sp
+    //them sp
     // public function Insert($loai,)
     public function Insert($loai,$tensp, $gia,$hinhanh,$mota){
         $qr="INSERT INTO sanpham (loai,tensp,gia,hinhanh,mota) VALUES

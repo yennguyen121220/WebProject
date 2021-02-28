@@ -22,7 +22,7 @@
 				
 				echo "<p>Giá: <span id='gia'>".$row["gia"]."</span></p>";
 				// echo "<form class='chonmua'>";
-				echo "<button class='btn-chonmua'>Đặt mua</button>";
+				// echo "<button class='btn-chonmua'>Đặt mua</button>";
 				echo "<a href='http://localhost/DoAn/ChiTietSP/ChiTiet/".$row["masp"]."' class='chonmua'>Chi tiết</a>";
 				// echo "</form></div></li></ul>";
 				echo "<p style='display:none;'>".$row["masp"]."<p>";
