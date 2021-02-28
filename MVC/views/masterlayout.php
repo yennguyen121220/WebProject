@@ -101,36 +101,79 @@
         	<div id="menu_left">
         		<div class="main_menu">
                     <h3>Danh mục sản phẩm</h3>
-                    <ul>
-                        <li><a href="./Tui" title="Túi">Túi</a></li>
-                        <li><a href="./Giay" title="Giày, dép">Giày, dép</a></li>
-                        <li><a href="./Ao" title="Áo">Áo</a></li>
-                        <li><a href="./Quan" title="Quần">Quần</a></li>
-                        <li><a href="./Yem" title="Yếm">Yếm</a></li>
-                        <li><a href="./ChanVay" title="Chân váy">Chân váy</a></li>
-						<li><a href="./Vay" title="Váy">Váy</a></li>
+                    <ul class="main_menu-list">
+                        <li class="main_menu-list-item">
+							<a href="./Tui" title="Túi">
+								<img src="https://img.icons8.com/bubbles/35/000000/bag-front-view.png" class="icon_product"/>
+								<span class="product_label">Túi</span>
+							</a>
+						</li>
+                        <li class="main_menu-list-item">
+							<a href="./Giay" title="Giày, dép">
+								<img src="https://img.icons8.com/cotton/35/000000/women-shoes.png" class="icon_product"/>
+								<span class="product_label">Giày, dép</span>
+							</a>
+						</li>
+                        <li class="main_menu-list-item">
+							<a href="./Ao" title="Áo">
+								<img src="https://img.icons8.com/clouds/38/000000/t-shirt.png" class="icon_product"/>
+								<span class="product_label">Áo</span>
+							</a>
+						</li>
+                        <li class="main_menu-list-item">
+							<a href="./Quan" title="Quần">
+								<img src="https://img.icons8.com/color/32/000000/long-shorts.png" class="icon_product"/>
+								<span class="product_label">Quần</span>
+							</a>
+						</li>
+                        <li class="main_menu-list-item">
+							<a href="./Yem" title="Yếm">
+								<img src="https://img.icons8.com/dusk/35/000000/standing-woman.png" class="icon_product"/>
+								<span class="product_label">Yếm</span>
+							</a>
+						</li>
+                        <li class="main_menu-list-item">
+							<a href="./ChanVay" title="Chân váy">
+								<img src="https://img.icons8.com/doodle/35/000000/skirt.png" class="icon_product"/>
+								<span class="product_label">Chân váy</span>
+							</a>
+						</li>
+						<li class="main_menu-list-item">
+							<a href="./Vay" title="Váy">
+								<img src="https://img.icons8.com/officel/30/000000/dress-back-view.png" class="icon_product"/>	
+								<span class="product_label">Váy</span>
+							</a>
+						</li>
 						<?php
 							
 							if( isset($_SESSION["quyen"])){
-								echo "<li><a>Cài đặt tài khoản</a>";
+								echo "<li class='main_menu-list-item main_menu-list-item--user'>
+										<a>
+											<img src='https://img.icons8.com/officel/30/000000/change-user-male.png' class='icon_product'/>
+											<span class='product_label'> Cài đặt tài khoản </span>
+ 										</a>";
 								echo "<ul class='submenu'>";
 								echo "";
-								echo "<li><a href='./SuaKH'>Sửa tài khoản</a></li>";
+								echo "<li class='main_menu-list-item'><a href='./SuaKH'>Sửa tài khoản</a></li>";
 								if($_SESSION["quyen"]==0){
-									echo "<li><a href='http://localhost/DoAn/Listhd/hoadonkh'>Hóa đơn mua hàng</a></li>";
+									echo "<li class='main_menu-list-item'><a href='http://localhost/DoAn/Listhd/hoadonkh'>Hóa đơn mua hàng</a></li>";
 								}
 								echo "</ul>";
 								echo "</li> ";
 							}
 							if( isset($_SESSION["quyen"]) && $_SESSION["quyen"]==1 ){
-								echo "<li><a>Quản lý</a>";
+								echo "<li class='main_menu-list-item main_menu-list-item--user'>
+										<a>
+											<img src='https://img.icons8.com/cotton/32/000000/management.png' class='icon_product'/>
+											<span class='product_label'> Quản lý </span>
+										</a>";
 								echo "<ul class='submenu'>";
 								echo "";
-								echo "<li><a href='./ThemSP'>Thêm sản phẩm</a></li>";
-								echo "<li><a href='./XoaSP'>Xóa sản phẩm</a></li>";
-								echo "<li><a href='./SuaSP'>Cập nhật sản phẩm</a></li>";
-								echo "<li><a href='./XoaKH'>Xóa khách hàng</a></li>";
-								echo "<li><a href='http://localhost/Doan/ListHD/danhsach'>Danh sách hóa đơn</a></li>";
+								echo "<li class='main_menu-list-item'><a href='./ThemSP'>Thêm sản phẩm</a></li>";
+								echo "<li class='main_menu-list-item'><a href='./XoaSP'>Xóa sản phẩm</a></li>";
+								echo "<li class='main_menu-list-item'><a href='./SuaSP'>Cập nhật sản phẩm</a></li>";
+								echo "<li class='main_menu-list-item'><a href='./XoaKH'>Xóa khách hàng</a></li>";
+								echo "<li class='main_menu-list-item'><a href='http://localhost/Doan/ListHD/danhsach'>Danh sách hóa đơn</a></li>";
 								echo "</ul>";
 								echo "</li> ";
 							}
