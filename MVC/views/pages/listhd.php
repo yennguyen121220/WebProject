@@ -1,4 +1,4 @@
-<div class="main__wrapper">
+<!-- <div class="main__wrapper">
     <div class="main__container-listhd">
         <div class="main__header">
             <h2 class="main__heading">DANH SÁCH HÓA ĐƠN</h2>
@@ -6,7 +6,7 @@
 
         <div class="main__totalHD">
             <p class="main__totalHD-para">Tổng số hóa đơn:
-                <?php
+            <?php
                     echo count($data["listHoaDon"]);
                 ?>
             </p>
@@ -21,8 +21,8 @@
                     <th>Số sản phẩm đã mua</th>
                     <th>Tổng tiền</th>
                     <th>Thêm</th>
-                </tr>
-                <?php
+                </tr> -->
+                <!-- <?php
                     $str="";
                     $arr1=$data["listHoaDon"];
                     for ($i=0;$i<count($arr1);$i++)
@@ -43,10 +43,10 @@
                         $str.=$row;
                     }
                     echo $str;
-                ?>
-            </table>
+                ?> -->
+            <!-- </table>
         </div>
-    </div>
+    </div> -->
     
     <div class="main__container-cthd-wrapper">
         <div class="main__container-cthd">
@@ -133,3 +133,72 @@
         document.querySelector(".main__container-cthd-wrapper").remove();
     }
 </script>
+
+<div class="main">
+    <div class="main_taikhoan">
+        <h3 class="username">
+            <?php
+                if(isset($_SESSION["username"])){
+                    echo "Chao ".$_SESSION["username"];
+                }
+            ?>
+        </h3>
+    </div>
+    <div class="main_thongtin">
+        <div class="main__container-listhd">
+            <div class="main__header">
+                <h2 class="main__heading">DANH SÁCH HÓA ĐƠN (<?php
+                        echo count($data["listHoaDon"]);
+                    ?>)</h2>
+            </div>
+
+            <div class="main__table" >
+                
+                            <?php
+                            $str="";
+                            $arr1=$data["listHoaDon"];
+                            for ($i=0;$i<count($arr1);$i++)
+                            {   
+                                if($arr1[$i]["tinhtrang"]==1)
+                                    $tt="Hoàn tất";
+                                else{
+                                    if($arr1[$i]["tinhtrang"]==0)
+                                        $tt="Đã hủy";
+                                    else $tt="Đang xử lý";
+                                }
+                                $row="
+                                    <div class='thongtindonhang'>
+                                        <nav class='nav-main'>
+                                            <ul>
+                                                <li>Mã đơn hàng: {$arr1[$i]["mahd"]} ({$arr1[$i]["Số sp đã mua"]}) </li>
+                                                <li>Mã khách hàng: {$arr1[$i]["makh"]}</li>
+                                                <li>Ngày tạo: {$arr1[$i]["ngayhd"]}</li>
+                                                
+                                                <li>Tình trạng: ".$tt."</li>
+                                                <li>Tổng tiền: {$arr1[$i]["tien"]} đ</li>
+                                                <li>
+                                                    <a href='http://localhost/DoAn/listhd/cthd/{$arr1[$i]["mahd"]}'>Xem chi tiết</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div class='thongtinsanpham'>
+
+                                    </div>
+                                ";
+
+                                $str.=$row;
+                            }
+                            echo $str;
+                        ?>
+                            
+                            <!--<li>Mã khách hàng</li>
+                            <li>Mã hóa đơn</li>
+                            <li>Tình trạng</li>
+                            <li>Tổng tiền</li>-->
+                        
+                
+            </div>
+        </div>
+    </div>
+</div>
